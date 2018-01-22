@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="王楠的Blog">
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id&amp;lt;RACSubscriber&amp;gt; subscriber) &amp;#123;        [subscriber sendNext:@&quot;1&quot;];">
 <meta property="og:type" content="article">
 <meta property="og:title" content="测试">
 <meta property="og:url" content="http://yoursite.com/2017/12/25/测试/index.html">
 <meta property="og:site_name" content="王楠的Blog">
-<meta property="og:description" content="王楠的Blog">
-<meta property="og:updated_time" content="2017-12-25T03:05:18.000Z">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id&amp;lt;RACSubscriber&amp;gt; subscriber) &amp;#123;        [subscriber sendNext:@&quot;1&quot;];">
+<meta property="og:updated_time" content="2018-01-22T09:32:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="测试">
-<meta name="twitter:description" content="王楠的Blog">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id&amp;lt;RACSubscriber&amp;gt; subscriber) &amp;#123;        [subscriber sendNext:@&quot;1&quot;];">
 
 
 
@@ -298,7 +298,8 @@
       
 
       
-        
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">RACSignal *signal = [RACSignal createSignal:^RACDisposable *(<span class="keyword">id</span>&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line"></div><div class="line">        [subscriber sendNext:<span class="string">@"1"</span>];</div><div class="line"></div><div class="line">        [subscriber sendNext:<span class="string">@"2"</span>];</div><div class="line"></div><div class="line">        [subscriber sendCompleted];</div><div class="line"></div><div class="line">        <span class="keyword">return</span> [RACDisposable disposableWithBlock:^&#123;</div><div class="line"></div><div class="line">            <span class="built_in">NSLog</span>(<span class="string">@"RACDisposable"</span>);</div><div class="line"></div><div class="line">        &#125;];</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    </div><div class="line"></div><div class="line">    RACDisposable *disp = [signal subscribeNext:^(<span class="keyword">id</span> x) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %@"</span>, x);</div><div class="line"></div><div class="line">    &#125; error:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"error"</span>);</div><div class="line"></div><div class="line">    &#125; completed:^&#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"completed"</span>);</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    </div><div class="line"></div><div class="line">    [disp dispose];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[[@[@&quot;you&quot;, @&quot;are&quot;, @&quot;beautiful&quot;].rac_sequence.signal map:^id(id value) &#123;</div><div class="line">        return [value capitalizedString];</div><div class="line">    &#125;] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;x: %@&quot;, x);</div><div class="line">    &#125; completed:^&#123;</div><div class="line">        NSLog(@&quot;completed&quot;);</div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
       
     </div>
     
