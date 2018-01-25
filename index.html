@@ -302,7 +302,7 @@
       
         
           
-            <h1 id="使用命令行操作iOS模拟器"><a href="#使用命令行操作iOS模拟器" class="headerlink" title="使用命令行操作iOS模拟器"></a>使用命令行操作iOS模拟器</h1><h2 id="查看当前启动的模拟器："><a href="#查看当前启动的模拟器：" class="headerlink" title="查看当前启动的模拟器："></a>查看当前启动的模拟器：</h2><blockquote>
+            <h2 id="查看当前启动的模拟器："><a href="#查看当前启动的模拟器：" class="headerlink" title="查看当前启动的模拟器："></a>查看当前启动的模拟器：</h2><blockquote>
 <p>xcrun simctl list devices | grep Booted</p>
 <p>输出结果：</p>
 <p><strong>iPhone 7 (5F0B29B7-4243-41F6-BB57-132ACD9B7A2A) (Booted)</strong></p>
@@ -328,15 +328,9 @@
 <p>​    };</p>
 </blockquote>
 <p>这个命令会输出包含系统应用在内的所有应用的信息，比如 应用名、BundleID、沙盒路径等等。</p>
-<p>这个命令稍作处理就会具备很多有意思的功能：</p>
-<ol>
-<li>过滤掉苹果的应用，只显示用户开发的应用</li>
-<li>根据应用名查找 BundleID，反之亦可</li>
-<li>根据应用名或者 BundleID 查找应用的沙盒目录</li>
-</ol>
 <h2 id="查看单独某个应用的信息"><a href="#查看单独某个应用的信息" class="headerlink" title="查看单独某个应用的信息"></a>查看单独某个应用的信息</h2><blockquote>
 <p>xcrun simctl appinfo booted BUNDLEID</p>
-<p>xcrun simctl appinfo booted com.watercuture.pictureLibrary</p>
+<p>xcrun simctl appinfo booted com.apple.Maps</p>
 </blockquote>
 <p>这里 booted 的意思是说只在启动的模拟器中查找，也可以填写模拟器的 UUID。</p>
 <h2 id="快速找到-app-的沙盒文件夹"><a href="#快速找到-app-的沙盒文件夹" class="headerlink" title="快速找到 app 的沙盒文件夹"></a>快速找到 app 的沙盒文件夹</h2><p>有一个关于<code>simctl</code>的命令。你可以获取到 app 的沙盒文件系统通过一条简单的命令。你只需要知道 app 的 bundle identifier 并执行以下命令：</p>
