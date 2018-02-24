@@ -110,7 +110,7 @@ Cycript钩住QQ音乐进程
 
 cycript -p 45025
 
-123">
+简单实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cycript使用">
 <meta property="og:url" content="http://yoursite.com/2018/02/09/Cycript使用/index.html">
@@ -146,10 +146,10 @@ Cycript钩住QQ音乐进程
 
 cycript -p 45025
 
-123">
+简单实">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/138251-2bc9e328e9735b32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/138251-d598d19420126a04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-02-09T06:00:15.000Z">
+<meta property="og:updated_time" content="2018-02-24T03:15:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cycript使用">
 <meta name="twitter:description" content="Cycript官网   Cycript基维
@@ -183,7 +183,7 @@ Cycript钩住QQ音乐进程
 
 cycript -p 45025
 
-123">
+简单实">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/138251-2bc9e328e9735b32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -425,7 +425,28 @@ cycript -p 45025
 <blockquote>
 <p>cycript -p 45025</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">获取UIApplication：</div><div class="line">var app = [UIApplication sharedApplication ]</div><div class="line">var rootVC = app.keyWindow.rootViewController</div></pre></td></tr></table></figure>
+<p><strong>简单实践：</strong></p>
+<ul>
+<li>更改手机锁屏时滑动解锁文字</li>
+</ul>
+<p>钩住进程： </p>
+<blockquote>
+<p>cycript -p SpringBoard </p>
+</blockquote>
+<p>查看 </p>
+<blockquote>
+<p> UIApp.keyWindow.recursiveDescription<strong>()</strong> </p>
+</blockquote>
+<p>获取对象：</p>
+<blockquote>
+<p>var manager = SBLockScreenManager.sharedInstance<strong>()</strong></p>
+<p>var controller = <strong>[</strong>manager lockScreenViewController<strong>]</strong>  </p>
+<p>var view = controller.lockScreenView<strong>()</strong> </p>
+</blockquote>
+<p>设置锁屏文字：</p>
+<blockquote>
+<p><strong>[</strong>view setCustomSlideToUnlockText<strong>:</strong> “Wangnan”<strong>]</strong></p>
+</blockquote>
 
       
     </div>
