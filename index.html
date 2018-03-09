@@ -303,7 +303,27 @@
         
           
             <p>一个Mach-O文件包含：<code>Header</code>、<code>Load commands</code>、<code>Raw segment data</code>。</p>
-<h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a><strong>Header</strong></h2><h2 id="Load-commands"><a href="#Load-commands" class="headerlink" title="Load commands"></a><strong>Load commands</strong></h2><h2 id="Raw-segment-data"><a href="#Raw-segment-data" class="headerlink" title="Raw segment data"></a><strong>Raw segment data</strong></h2><h2 id="参考链接：-Mach-O-Programming-Topics"><a href="#参考链接：-Mach-O-Programming-Topics" class="headerlink" title="参考链接： Mach-O Programming Topics"></a>参考链接： <a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html#//apple_ref/doc/uid/TP40001827-SW1" target="_blank" rel="external">Mach-O Programming Topics</a></h2>
+<p>官方文档中的结构：</p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true" width="300px"></p>
+<p>使用<code>MachOView</code>打开结构如下：</p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-1.png?raw=true" width="300px"></p>
+<h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a><strong>Header</strong></h2><p>Header中包含Mach-O的基本信息，Header结构：</p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-2.png?raw=true" width="600px"></p>
+<ul>
+<li><code>magic：</code>魔数，用于快速确认该文件用于64位还是32位</li>
+<li><code>cputype：</code>CPU类型，比如 arm</li>
+<li><code>cpusubtype：</code>对应的具体类型，比如arm64、armv7</li>
+<li><code>filetype：</code>文件类型，比如可执行文件、库文件、Dsym文件，demo中是2 <code>MH_EXECUTE</code>，代表可执行文件</li>
+</ul>
+<ul>
+<li><code>ncmds ：</code>加载命令条数</li>
+<li><code>sizeofcmds</code>：所有加载命令的大小</li>
+<li><code>reserved：</code>保留字段</li>
+<li><code>flags：</code>标志位，刚才<code>demo</code>中显示的都在这里了，其余的有兴趣可以阅读 <code>mach o</code>源码</li>
+</ul>
+<p>##<strong>Load commands</strong></p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-3.png?raw=true" width="600px"></p>
+<h2 id="Raw-segment-data"><a href="#Raw-segment-data" class="headerlink" title="Raw segment data"></a><strong>Raw segment data</strong></h2><h2 id="参考链接：-Mach-O-Programming-Topics"><a href="#参考链接：-Mach-O-Programming-Topics" class="headerlink" title="参考链接： Mach-O Programming Topics"></a>参考链接： <a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html#//apple_ref/doc/uid/TP40001827-SW1" target="_blank" rel="external">Mach-O Programming Topics</a></h2>
           
         
       

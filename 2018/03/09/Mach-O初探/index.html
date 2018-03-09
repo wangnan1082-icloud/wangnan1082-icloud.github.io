@@ -80,18 +80,50 @@
 
 
 <meta name="description" content="一个Mach-O文件包含：Header、Load commands、Raw segment data。
-HeaderLoad commandsRaw segment data参考链接： Mach-O Programming Topics">
+官方文档中的结构：
+
+使用MachOView打开结构如下：
+
+HeaderHeader中包含Mach-O的基本信息，Header结构：
+
+
+magic：魔数，用于快速确认该文件用于64位还是32位
+cputype：CPU类型，比如 arm
+cpusubtype：对应的具体类型，比如arm64、a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mach-O初探">
 <meta property="og:url" content="http://yoursite.com/2018/03/09/Mach-O初探/index.html">
 <meta property="og:site_name" content="王楠的Blog">
 <meta property="og:description" content="一个Mach-O文件包含：Header、Load commands、Raw segment data。
-HeaderLoad commandsRaw segment data参考链接： Mach-O Programming Topics">
-<meta property="og:updated_time" content="2018-03-09T02:21:35.000Z">
+官方文档中的结构：
+
+使用MachOView打开结构如下：
+
+HeaderHeader中包含Mach-O的基本信息，Header结构：
+
+
+magic：魔数，用于快速确认该文件用于64位还是32位
+cputype：CPU类型，比如 arm
+cpusubtype：对应的具体类型，比如arm64、a">
+<meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true">
+<meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-1.png?raw=true">
+<meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-2.png?raw=true">
+<meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-3.png?raw=true">
+<meta property="og:updated_time" content="2018-03-09T03:17:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mach-O初探">
 <meta name="twitter:description" content="一个Mach-O文件包含：Header、Load commands、Raw segment data。
-HeaderLoad commandsRaw segment data参考链接： Mach-O Programming Topics">
+官方文档中的结构：
+
+使用MachOView打开结构如下：
+
+HeaderHeader中包含Mach-O的基本信息，Header结构：
+
+
+magic：魔数，用于快速确认该文件用于64位还是32位
+cputype：CPU类型，比如 arm
+cpusubtype：对应的具体类型，比如arm64、a">
+<meta name="twitter:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true">
 
 
 
@@ -302,7 +334,27 @@ HeaderLoad commandsRaw segment data参考链接： Mach-O Programming Topics">
 
       
         <p>一个Mach-O文件包含：<code>Header</code>、<code>Load commands</code>、<code>Raw segment data</code>。</p>
-<h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a><strong>Header</strong></h2><h2 id="Load-commands"><a href="#Load-commands" class="headerlink" title="Load commands"></a><strong>Load commands</strong></h2><h2 id="Raw-segment-data"><a href="#Raw-segment-data" class="headerlink" title="Raw segment data"></a><strong>Raw segment data</strong></h2><h2 id="参考链接：-Mach-O-Programming-Topics"><a href="#参考链接：-Mach-O-Programming-Topics" class="headerlink" title="参考链接： Mach-O Programming Topics"></a>参考链接： <a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html#//apple_ref/doc/uid/TP40001827-SW1" target="_blank" rel="external">Mach-O Programming Topics</a></h2>
+<p>官方文档中的结构：</p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true" width="300px"></p>
+<p>使用<code>MachOView</code>打开结构如下：</p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-1.png?raw=true" width="300px"></p>
+<h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a><strong>Header</strong></h2><p>Header中包含Mach-O的基本信息，Header结构：</p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-2.png?raw=true" width="600px"></p>
+<ul>
+<li><code>magic：</code>魔数，用于快速确认该文件用于64位还是32位</li>
+<li><code>cputype：</code>CPU类型，比如 arm</li>
+<li><code>cpusubtype：</code>对应的具体类型，比如arm64、armv7</li>
+<li><code>filetype：</code>文件类型，比如可执行文件、库文件、Dsym文件，demo中是2 <code>MH_EXECUTE</code>，代表可执行文件</li>
+</ul>
+<ul>
+<li><code>ncmds ：</code>加载命令条数</li>
+<li><code>sizeofcmds</code>：所有加载命令的大小</li>
+<li><code>reserved：</code>保留字段</li>
+<li><code>flags：</code>标志位，刚才<code>demo</code>中显示的都在这里了，其余的有兴趣可以阅读 <code>mach o</code>源码</li>
+</ul>
+<p>##<strong>Load commands</strong></p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-3.png?raw=true" width="600px"></p>
+<h2 id="Raw-segment-data"><a href="#Raw-segment-data" class="headerlink" title="Raw segment data"></a><strong>Raw segment data</strong></h2><h2 id="参考链接：-Mach-O-Programming-Topics"><a href="#参考链接：-Mach-O-Programming-Topics" class="headerlink" title="参考链接： Mach-O Programming Topics"></a>参考链接： <a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html#//apple_ref/doc/uid/TP40001827-SW1" target="_blank" rel="external">Mach-O Programming Topics</a></h2>
       
     </div>
     
@@ -462,7 +514,7 @@ HeaderLoad commandsRaw segment data参考链接： Mach-O Programming Topics">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Header"><span class="nav-number">1.</span> <span class="nav-text">Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-commands"><span class="nav-number">2.</span> <span class="nav-text">Load commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Raw-segment-data"><span class="nav-number">3.</span> <span class="nav-text">Raw segment data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接：-Mach-O-Programming-Topics"><span class="nav-number">4.</span> <span class="nav-text">参考链接： Mach-O Programming Topics</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Header"><span class="nav-number">1.</span> <span class="nav-text">Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Raw-segment-data"><span class="nav-number">2.</span> <span class="nav-text">Raw segment data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接：-Mach-O-Programming-Topics"><span class="nav-number">3.</span> <span class="nav-text">参考链接： Mach-O Programming Topics</span></a></li></ol></div>
             
 
           </div>
