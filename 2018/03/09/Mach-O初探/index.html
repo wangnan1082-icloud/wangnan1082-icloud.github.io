@@ -79,35 +79,20 @@
 
 
 
-<meta name="description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、具体数据Segment&amp;amp;Section。
-官方文档中的结构：
-
-使用MachOView打开结构如下：
-
-HeaderHeader中包含Mach-O的基本信息，它在文件中的作用主要是：使系统能够快速定位其运行环境以及文件类型">
+<meta name="description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、具体数据Segment&amp;amp;Section。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mach-O初探">
 <meta property="og:url" content="http://yoursite.com/2018/03/09/Mach-O初探/index.html">
 <meta property="og:site_name" content="王楠的Blog">
-<meta property="og:description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、具体数据Segment&amp;amp;Section。
-官方文档中的结构：
-
-使用MachOView打开结构如下：
-
-HeaderHeader中包含Mach-O的基本信息，它在文件中的作用主要是：使系统能够快速定位其运行环境以及文件类型">
+<meta property="og:description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、具体数据Segment&amp;amp;Section。">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-1.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-2.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-3.png?raw=true">
-<meta property="og:updated_time" content="2018-03-16T07:18:42.000Z">
+<meta property="og:updated_time" content="2018-03-16T07:46:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mach-O初探">
-<meta name="twitter:description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、具体数据Segment&amp;amp;Section。
-官方文档中的结构：
-
-使用MachOView打开结构如下：
-
-HeaderHeader中包含Mach-O的基本信息，它在文件中的作用主要是：使系统能够快速定位其运行环境以及文件类型">
+<meta name="twitter:description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、具体数据Segment&amp;amp;Section。">
 <meta name="twitter:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true">
 
 
@@ -365,6 +350,7 @@ HeaderHeader中包含Mach-O的基本信息，它在文件中的作用主要是�
 
       
         <p>Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头<code>Header</code>、加载命令<code>Load commands</code>、具体数据<code>Segment&amp;Section</code>。</p>
+<a id="more"></a>
 <p>官方文档中的结构：</p>
 <p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true" width="300px"></p>
 <p>使用<code>MachOView</code>打开结构如下：</p>
