@@ -684,7 +684,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/测试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/使用 OHHTTPStubs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王楠">
@@ -703,7 +703,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/25/测试/" itemprop="url">测试</a></h1>
+                <a class="post-title-link" href="/2017/12/25/使用 OHHTTPStubs/" itemprop="url">使用 OHHTTPStubs</a></h1>
         
 
         <div class="post-meta">
@@ -725,6 +725,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OHHTTPStubs/" itemprop="url" rel="index">
+                    <span itemprop="name">OHHTTPStubs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -754,10 +776,13 @@
 
       
         
-          <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">RACSignal *signal = [RACSignal createSignal:^RACDisposable *(<span class="keyword">id</span>&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line"></div><div class="line">        [subscriber sendNext:<span class="string">@"1"</span>];</div><div class="line"></div><div class="line">        [subscriber sendNext:<span class="string">@"2"</span>];</div><div class="line"></div><div class="line">        [subscriber sendCompleted];</div><div class="line"></div><div class="line">        <span class="keyword">return</span> [RACDisposable disposableWithBlock:^&#123;</div><div class="line"></div><div class="line">            <span class="built_in">NSLog</span>(<span class="string">@"RACDisposable"</span>);</div><div class="line"></div><div class="line">        &#125;];</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    </div><div class="line"></div><div class="line">    RACDisposable *disp = [signal subscribeNext:^(<span class="keyword">id</span> x) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %@"</span>, x);</div><div class="line"></div><div class="line">    &#125; error:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"error"</span>);</div><div class="line"></div><div class="line">    &#125; completed:^&#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"completed"</span>);</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    </div><div class="line"></div><div class="line">    [disp dispose];</div></pre></td></tr></table></figure>
+          <ul>
+<li>OHHTTPStubs</li>
+</ul>
+<p>在你的服务端还没有准备妥当或者在你需要模拟数据进行本地开发时，<code>OHHTTPStubs</code>是一个很好的可以加速测试和开发的工具。<code>OHHTTPStubs</code>可使用伪造的网络数据和模拟的缓慢网络来测试你的应用程序，从而检测你的应用程序在不佳的网络环境中的行为，并使用伪造的网络数据编写单元测试。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/25/测试/#more" rel="contents">
+            <a class="btn" href="/2017/12/25/使用 OHHTTPStubs/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -856,7 +881,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -867,7 +892,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
