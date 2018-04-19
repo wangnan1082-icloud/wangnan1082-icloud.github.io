@@ -79,22 +79,19 @@
 
 
 
-<meta name="description" content="OHHTTPStubs
-
-在你的服务端还没有准备妥当或者在你需要模拟数据进行本地开发时，OHHTTPStubs是一个很好的可以加速测试和开发的工具。OHHTTPStubs可使用伪造的网络数据和模拟的缓慢网络来测试你的应用程序，从而检测你的应用程序在不佳的网络环境中的行为，并使用伪造的网络数据编写单元测试。">
+<meta name="description" content="OHHTTPStubs 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 json 数据，可以用来编写网络请求的单元测试。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 OHHTTPStubs">
 <meta property="og:url" content="http://yoursite.com/2017/12/25/使用 OHHTTPStubs/index.html">
 <meta property="og:site_name" content="王楠的Blog">
-<meta property="og:description" content="OHHTTPStubs
-
-在你的服务端还没有准备妥当或者在你需要模拟数据进行本地开发时，OHHTTPStubs是一个很好的可以加速测试和开发的工具。OHHTTPStubs可使用伪造的网络数据和模拟的缓慢网络来测试你的应用程序，从而检测你的应用程序在不佳的网络环境中的行为，并使用伪造的网络数据编写单元测试。">
-<meta property="og:updated_time" content="2018-04-08T08:28:03.000Z">
+<meta property="og:description" content="OHHTTPStubs 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 json 数据，可以用来编写网络请求的单元测试。">
+<meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-1.png?raw=true">
+<meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-2.png?raw=true">
+<meta property="og:updated_time" content="2018-04-19T06:42:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 OHHTTPStubs">
-<meta name="twitter:description" content="OHHTTPStubs
-
-在你的服务端还没有准备妥当或者在你需要模拟数据进行本地开发时，OHHTTPStubs是一个很好的可以加速测试和开发的工具。OHHTTPStubs可使用伪造的网络数据和模拟的缓慢网络来测试你的应用程序，从而检测你的应用程序在不佳的网络环境中的行为，并使用伪造的网络数据编写单元测试。">
+<meta name="twitter:description" content="OHHTTPStubs 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 json 数据，可以用来编写网络请求的单元测试。">
+<meta name="twitter:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-1.png?raw=true">
 
 
 
@@ -234,7 +231,7 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-OHHTTPStubs" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -328,13 +325,22 @@
       
 
       
-        <ul>
-<li>OHHTTPStubs</li>
-</ul>
-<p>在你的服务端还没有准备妥当或者在你需要模拟数据进行本地开发时，<code>OHHTTPStubs</code>是一个很好的可以加速测试和开发的工具。<code>OHHTTPStubs</code>可使用伪造的网络数据和模拟的缓慢网络来测试你的应用程序，从而检测你的应用程序在不佳的网络环境中的行为，并使用伪造的网络数据编写单元测试。</p>
+        <p><a href="https://github.com/AliSoftware/OHHTTPStubs" target="_blank" rel="external">OHHTTPStubs</a> 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 <code>json</code> 数据，可以用来编写网络请求的单元测试。</p>
 <a id="more"></a>
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest * _Nonnull request) &#123;</div><div class="line">        return [request.URL.absoluteString isEqualToString:@&quot;http://www.test.com/test&quot;];</div><div class="line">    &#125; withStubResponse:^OHHTTPStubsResponse * _Nonnull(NSURLRequest * _Nonnull request) &#123;</div><div class="line">        NSString *fixture = OHPathForFile(@&quot;testData.json&quot;, self.class);</div><div class="line">        return [[OHHTTPStubsResponse responseWithFileAtPath:fixture statusCode:200 headers:@&#123;@&quot;Content-Type&quot;:@&quot;application/json&quot;&#125;] requestTime:1.0 responseTime:3.0];</div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
-<p>拦截域名为<code>http://www.test.com/test</code>的<em>HTTP</em>请求，并返回<code>testData.json</code>文件里面的数据，可以设置网络状态码为200，请求头格式，以及请求时间和响应时间。</p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest * _Nonnull request) &#123;</div><div class="line">        return [request.URL.absoluteString isEqualToString:@&quot;http://www.test.com/test&quot;];</div><div class="line">    &#125; withStubResponse:^OHHTTPStubsResponse * _Nonnull(NSURLRequest * _Nonnull request) &#123;</div><div class="line">        NSString *fixture = OHPathForFile(@&quot;testData.json&quot;, self.class);</div><div class="line">        return [[OHHTTPStubsResponse responseWithFileAtPath:fixture statusCode:200 headers:@&#123;@&quot;Content-Type&quot;:@&quot;application/json&quot;&#125;] requestTime:1.0 responseTime:3.0];</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];</div><div class="line">    [manager GET:TestUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, responseObject);</div><div class="line">    &#125; failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, error.localizedDescription);</div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
+<p>拦截域名为<code>http://www.test.com/test</code>的HTTP请求，并返回本地<code>testData.json</code>文件中的数据，并可以设置网络状态码为200，请求头格式，以及请求时间和响应时间。虽然这个 URL 并不存在，但是这里的代码通过 HTTP stub 成功地模拟了 HTTP 响应。</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-1.png?raw=true" width="300px"></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ul>
+<li><p>通过<code>OHHTTPStubsProtocol</code> 拦截 HTTP 请求</p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-2.png?raw=true" width="300px"></p>
+</li>
+</ul>
+<ul>
+<li><code>OHHTTPStubsResponse</code> 伪造 HTTP 响应</li>
+</ul>
+<ul>
+<li><code>OHPathHelpers</code>处理本地文件</li>
+</ul>
 
       
     </div>
@@ -476,7 +482,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -519,7 +525,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构"><span class="nav-number">2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li></ol></div>
             
 
           </div>
