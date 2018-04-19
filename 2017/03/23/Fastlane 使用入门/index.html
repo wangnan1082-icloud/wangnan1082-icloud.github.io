@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Fastlane," />
 
 
 
@@ -79,15 +79,28 @@
 
 
 
-<meta name="description" content="王楠的Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王楠的Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Fastlane 使用入门Fastlane中的概念
+fastlane 官网，fastlane 的 github，fastlane命令是一个流程控制的命令行工具(CLI)，通过内部集成action和第三方的action完成一系列控制流程。运行fastlane命令行工具，会读取当前目录或者./fastlane目录下的Fastfile配置文件。
+在Fastfile中：
+
+action =&amp;gt; Fas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fastlane 使用入门">
+<meta property="og:url" content="http://yoursite.com/2017/03/23/Fastlane 使用入门/index.html">
 <meta property="og:site_name" content="王楠的Blog">
-<meta property="og:description" content="王楠的Blog">
+<meta property="og:description" content="Fastlane 使用入门Fastlane中的概念
+fastlane 官网，fastlane 的 github，fastlane命令是一个流程控制的命令行工具(CLI)，通过内部集成action和第三方的action完成一系列控制流程。运行fastlane命令行工具，会读取当前目录或者./fastlane目录下的Fastfile配置文件。
+在Fastfile中：
+
+action =&amp;gt; Fas">
+<meta property="og:updated_time" content="2018-04-19T06:55:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王楠的Blog">
-<meta name="twitter:description" content="王楠的Blog">
+<meta name="twitter:title" content="Fastlane 使用入门">
+<meta name="twitter:description" content="Fastlane 使用入门Fastlane中的概念
+fastlane 官网，fastlane 的 github，fastlane命令是一个流程控制的命令行工具(CLI)，通过内部集成action和第三方的action完成一系列控制流程。运行fastlane命令行工具，会读取当前目录或者./fastlane目录下的Fastfile配置文件。
+在Fastfile中：
+
+action =&amp;gt; Fas">
 
 
 
@@ -117,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/23/Fastlane 使用入门/"/>
 
 
 
 
 
-  <title>王楠的Blog</title>
+  <title>Fastlane 使用入门 | 王楠的Blog</title>
   
 
 
@@ -144,8 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,611 +230,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/Mach-O初探/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="王楠的Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/09/Mach-O初探/" itemprop="url">Mach-O初探</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T10:20:49+08:00">
-                2018-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mach-O/" itemprop="url" rel="index">
-                    <span itemprop="name">Mach-O</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头<code>Header</code>、加载命令<code>Load commands</code>、数据区<code>Data</code>包含<code>Segment&amp;Section</code>。</p>
-<ul>
-<li>Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以及加载命令等信息</li>
-<li>加载命令（Load Command）：描述了文件中数据的具体组织结构，不同的数据类型使用不同的加载命令表示</li>
-<li>数据区（Data）：Data 中每一个段（Segment）的数据都保存在此，段都拥有一个或多个 Section ，用来存放数据和代码。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/09/Mach-O初探/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/09/Cycript使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="王楠的Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/09/Cycript使用/" itemprop="url">Cycript使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T13:59:13+08:00">
-                2018-02-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Cycript/" itemprop="url" rel="index">
-                    <span itemprop="name">Cycript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li>运行</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">iPhone:~$ cycript</div><div class="line">cy#</div></pre></td></tr></table></figure>
-<ul>
-<li>退出cycript</li>
-</ul>
-<blockquote>
-<p><code>Control+D</code>，来退出<code>Cydia</code></p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/09/Cycript使用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-命令行" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/使用命令行操作iOS模拟器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="王楠的Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/25/使用命令行操作iOS模拟器/" itemprop="url">使用命令行操作iOS模拟器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T17:24:48+08:00">
-                2017-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/命令行/" itemprop="url" rel="index">
-                    <span itemprop="name">命令行</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="查看当前启动的模拟器"><a href="#查看当前启动的模拟器" class="headerlink" title="查看当前启动的模拟器"></a>查看当前启动的模拟器</h2><blockquote>
-<p>xcrun simctl list devices | grep Booted</p>
-<p>输出结果：</p>
-<p><strong>iPhone 7 (5F0B29B7-4243-41F6-BB57-132ACD9B7A2A) (Booted)</strong></p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/25/使用命令行操作iOS模拟器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-OHHTTPStubs" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/使用 OHHTTPStubs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="王楠的Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/25/使用 OHHTTPStubs/" itemprop="url">使用 OHHTTPStubs</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T11:05:18+08:00">
-                2017-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OHHTTPStubs/" itemprop="url" rel="index">
-                    <span itemprop="name">OHHTTPStubs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://github.com/AliSoftware/OHHTTPStubs">OHHTTPStubs</a> 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 <code>json</code> 数据，可以用来编写网络请求的单元测试。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/25/使用 OHHTTPStubs/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -852,9 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/23/Fastlane 使用入门/" itemprop="url">Fastlane 使用入门</a></h1>
+          <h1 class="post-title" itemprop="name headline">Fastlane 使用入门</h1>
         
 
         <div class="post-meta">
@@ -926,9 +334,7 @@
       
 
       
-        
-          
-            <h1 id="Fastlane-使用入门"><a href="#Fastlane-使用入门" class="headerlink" title="Fastlane 使用入门"></a>Fastlane 使用入门</h1><p><strong>Fastlane中的概念</strong></p>
+        <h1 id="Fastlane-使用入门"><a href="#Fastlane-使用入门" class="headerlink" title="Fastlane 使用入门"></a>Fastlane 使用入门</h1><p><strong>Fastlane中的概念</strong></p>
 <p><a href="https://fastlane.tools/" target="_blank" rel="external">fastlane 官网</a>，<a href="https://github.com/fastlane/fastlane" target="_blank" rel="external">fastlane 的 github</a>，fastlane命令是一个流程控制的命令行工具(CLI)，通过内部集成action和第三方的action完成一系列控制流程。运行fastlane命令行工具，会读取当前目录或者./fastlane目录下的Fastfile配置文件。</p>
 <p>在Fastfile中：</p>
 <ul>
@@ -1042,8 +448,6 @@
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>1.<a href="https://whlsxl.github.io" target="_blank" rel="external">小团队的自动化发布－Fastlane带来的全自动化发布</a></p>
 <p>2.<a href="http://www.jianshu.com/p/0b22d6a8969d#" target="_blank" rel="external">iOS持续集成从入门到放弃(1)</a></p>
 
-          
-        
       
     </div>
     
@@ -1058,14 +462,36 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/Fastlane/" rel="tag"># Fastlane</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/25/使用 OHHTTPStubs/" rel="prev" title="使用 OHHTTPStubs">
+                使用 OHHTTPStubs <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -1075,10 +501,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1086,6 +513,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1106,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1181,6 +621,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fastlane-使用入门"><span class="nav-number">1.</span> <span class="nav-text">Fastlane 使用入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fastlane-安装"><span class="nav-number">1.1.</span> <span class="nav-text">Fastlane 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">1.3.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fastfile配置"><span class="nav-number">1.4.</span> <span class="nav-text">Fastfile配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#upload-sh-的内容"><span class="nav-number">2.</span> <span class="nav-text">upload.sh 的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fastlane-打包ipa"><span class="nav-number">2.1.</span> <span class="nav-text">Fastlane 打包ipa</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-fir-cli"><span class="nav-number">2.2.</span> <span class="nav-text">安装 fir-cli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布到Fir-im"><span class="nav-number">2.3.</span> <span class="nav-text">发布到Fir.im</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤总结"><span class="nav-number">2.4.</span> <span class="nav-text">步骤总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">2.5.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1319,6 +775,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
