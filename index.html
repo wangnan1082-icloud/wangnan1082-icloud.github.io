@@ -830,7 +830,7 @@
   
   
 
-  <article class="post post-type-Fastlane" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-fastlane" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -854,7 +854,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/03/23/Fastlane 使用入门/" itemprop="url">Fastlane 使用入门</a></h1>
+                <a class="post-title-link" href="/2017/03/23/Fastlane 使用入门/" itemprop="url">fastlane 使用入门</a></h1>
         
 
         <div class="post-meta">
@@ -889,8 +889,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Fastlane/" itemprop="url" rel="index">
-                    <span itemprop="name">Fastlane</span>
+                  <a href="/categories/fastlane/" itemprop="url" rel="index">
+                    <span itemprop="name">fastlane</span>
                   </a>
                 </span>
 
@@ -927,122 +927,14 @@
 
       
         
-          
-            <h1 id="Fastlane-使用入门"><a href="#Fastlane-使用入门" class="headerlink" title="Fastlane 使用入门"></a>Fastlane 使用入门</h1><p><strong>Fastlane中的概念</strong></p>
-<p><a href="https://fastlane.tools/" target="_blank" rel="external">fastlane 官网</a>，<a href="https://github.com/fastlane/fastlane" target="_blank" rel="external">fastlane 的 github</a>，fastlane命令是一个流程控制的命令行工具(CLI)，通过内部集成action和第三方的action完成一系列控制流程。运行fastlane命令行工具，会读取当前目录或者./fastlane目录下的Fastfile配置文件。</p>
-<p>在Fastfile中：</p>
-<ul>
-<li><code>action</code> =&gt; Fastlane中的每一条命令都是一个扩展(action)，上面提到的deliver，sigh之类的工具本身是CLI，但是在Fastlane中内嵌了对他们支持的action</li>
-<li><code>lane</code> =&gt; Fastlane中流程的合集，每一个动作即可以是action，也可以是其他的lane。语法和ruby中的rake非常像</li>
-</ul>
-<p>一个简单的发布流程：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">lane <span class="symbol">:deploy</span> <span class="keyword">do</span></div><div class="line"><span class="comment"># 执行 pod instasll</span></div><div class="line">cocoapods</div><div class="line"><span class="comment"># 执行 carthage bootstrap</span></div><div class="line"> carthage</div><div class="line"><span class="comment"># 增加build版本号  increment_build_number</span></div><div class="line"><span class="comment"># 编译代码  gym</span></div><div class="line"><span class="comment"># 发布到Apple Store</span></div><div class="line">deliver(<span class="symbol">force:</span> <span class="literal">true</span>)</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Fastlane-安装"><a href="#Fastlane-安装" class="headerlink" title="Fastlane 安装"></a>Fastlane 安装</h2><blockquote>
-<p>使用<code>gem install fastlane</code>进行安装。</p>
-</blockquote>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>进入到项目的目录下，(包含<em>*</em>.xcodeproj的目录)。</p>
-<p>使用<code>fastlane init</code></p>
-<p>提问了你的Apple ID，Team的问题之后，fastlane会自动检测当前目录下项目的App Name和App Identifier。如果检测的不对，选择n自行输入。</p>
-<p>接下来会问你这个app是否需要在iTC和ADC中创建(上一步中如果选择y会自动检测是否需要创建)，fastlane会调用produce进行初始化，如果现在还不想创建，也可以之后再运行produce init进行这个流程。如果不执行produce的流程，deliver的流程也会被掠过，当然之后也可以deliver init运行完全一样的流程。</p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Fastlane的插件是一个或者一组action的打包，单独发布在fastlane之外。<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md" target="_blank" rel="external">Fastlane Plugin 指南</a></p>
-<p>自从16年5月份推出插件系统以来，现在已经有很多第三方的插件可以使用。查看所有插件：</p>
-<blockquote>
-<p>fastlane search_plugins</p>
-</blockquote>
-<p>这里介绍两个下文会用到的插件：</p>
-<ol>
-<li><code>fastlane-plugin-versioning</code> =&gt; 用来修改build版本号和version版本号。<br>Fastlane内嵌的actionincrement_build_number使用的是苹果提供的agvtool，agvtool在更改Build的时候会改变所有target的版本号。这时如果你在一个工程里有多个产品的话，每次编译，所有的Build都要加1，最后就不知道高到哪里去了。<br>有了fastlane-plugin-versioning不仅可以指定target增加Build，而且可以按照「<a href="http://semver.org/lang/zh-CN/" target="_blank" rel="external">语义化版本</a>」规范增加Version，当然也可以直接设定Version。<br>PS：最开始写iOS时不知道怎么定义Build。现在我一般都直接定义成纯数字，比如100起,每次编译的时候让他自动加一。</li>
-<li><a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim" target="_blank" rel="external">fastlane-plugin-firim</a> =&gt; 直接把AdHoc或者InHouse打包的ipa上传到fir.im，供测试下载。</li>
-</ol>
-<p>安装上面的插件</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fastlane add_plugin [name]</div><div class="line"><span class="comment"># 安装方法</span></div><div class="line">fastlane add_plugin versioning</div><div class="line">fastlane add_plugin firim</div></pre></td></tr></table></figure>
-<h2 id="Fastfile配置"><a href="#Fastfile配置" class="headerlink" title="Fastfile配置"></a>Fastfile配置</h2><p>有了Fastfile，就可以添加自己的发布流程了。下面是打包企业ipa包的参考。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># This is the minimum version number required.</span></div><div class="line"><span class="comment"># Update this, if you use features of a newer version</span></div><div class="line">fastlane_version <span class="string">"2.22.0"</span></div><div class="line">default_platform <span class="symbol">:ios</span></div><div class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></div><div class="line">  desc <span class="string">"使用Fastlane 打包企业ipa包"</span></div><div class="line">  lane <span class="symbol">:toipa</span> <span class="keyword">do</span> <span class="params">|op|</span></div><div class="line">    <span class="comment"># 以下两个action来自fastlane-plugin-versioning，</span></div><div class="line">    <span class="comment"># 第一个递增 Build，第二个设定Version。</span></div><div class="line">    <span class="comment"># 如果你有多个target，就必须指定target的值，否则它会直接找找到的第一个plist修改</span></div><div class="line">    <span class="comment">#设置version_number，使用命令 fastlane toipa version:1.0.3  或 fastlane toipa v:1.0.4 或 fastlane toipa （使用项目所设置的 Bundle versions string, short）</span></div><div class="line">    ipa_version_num = op[<span class="symbol">:version</span>] <span class="params">||</span> op[<span class="symbol">:v</span>]</div><div class="line">    <span class="keyword">if</span> ipa_version_num <span class="keyword">then</span></div><div class="line">      increment_version_number(</div><div class="line">      <span class="symbol">version_number:</span> ipa_version_num</div><div class="line">    )</div><div class="line">    <span class="keyword">else</span></div><div class="line">      increment_version_number(</div><div class="line">      <span class="symbol">version_number:</span> get_version_number</div><div class="line">    )</div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    <span class="comment">#递增build number，version_num后追加时间 eg: 1.0.0.03221741</span></div><div class="line">    build_no = get_version_number + <span class="string">'.'</span> + Time.new.strftime(<span class="string">"%m%d%H%M"</span>)</div><div class="line">    increment_build_number(<span class="symbol">build_number:</span> build_no)</div><div class="line"></div><div class="line">    puts <span class="string">"Begin to run toipa"</span></div><div class="line">    <span class="comment">#打印一下build_no</span></div><div class="line">    puts build_no</div><div class="line"></div><div class="line">    <span class="comment">#打包 选择打包方式目前是企业打包</span></div><div class="line">    gym(</div><div class="line">      <span class="comment"># export_method, must be: ["app-store", "ad-hoc", "package", "enterprise", "development", "developer-id"]</span></div><div class="line">      <span class="symbol">export_method:</span><span class="string">"enterprise"</span>,</div><div class="line">      <span class="symbol">output_directory:</span><span class="string">"./fastlane/build"</span>,</div><div class="line">      <span class="symbol">output_name:</span><span class="string">"resultIpa"</span>,</div><div class="line">      <span class="symbol">clean:</span> <span class="string">"true"</span></div><div class="line">    ) </div><div class="line">    </div><div class="line">    <span class="comment">#执行shell</span></div><div class="line">    puts <span class="string">"===执行shell!==="</span></div><div class="line">    sh <span class="string">"./upload.sh"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line">    </div><div class="line">  desc <span class="string">"build all version ipa"</span></div><div class="line">  lane <span class="symbol">:all</span> <span class="keyword">do</span> <span class="params">|op|</span></div><div class="line">    t = op[<span class="symbol">:version</span>] <span class="params">||</span> op[<span class="symbol">:v</span>]</div><div class="line">    ipa <span class="symbol">version:</span>t</div><div class="line">    to_firim <span class="symbol">version:</span>t</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h1 id="upload-sh-的内容"><a href="#upload-sh-的内容" class="headerlink" title="upload.sh 的内容"></a>upload.sh 的内容</h1><blockquote>
-<p>fir publish ./build/resultIpa.ipa -T 8657ecd5332c5e5efd248d593968b14d -c 测试上传…<br>echo “===Finished.===”</p>
-</blockquote>
-<h2 id="Fastlane-打包ipa"><a href="#Fastlane-打包ipa" class="headerlink" title="Fastlane 打包ipa"></a>Fastlane 打包ipa</h2><blockquote>
-<p><code>fastlane toipa version:1.0.3</code>  或 <code>fastlane toipa v:1.0.4</code> 或 <code>fastlane toipa</code> （使用项目中所设置的 Bundle versions string, short作为版本号）</p>
-</blockquote>
-<h2 id="安装-fir-cli"><a href="#安装-fir-cli" class="headerlink" title="安装 fir-cli"></a>安装 <code>fir-cli</code></h2><p>fir-cli 使用 Ruby 构建, 无需编译, 只要安装相应 gem 即可.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ruby -v <span class="comment"># &gt; 1.9.3</span></div><div class="line">$ gem install fir-cli</div></pre></td></tr></table></figure>
-<p>如果有问题可以查看下面的文档 :</p>
-<ul>
-<li><a href="https://github.com/FIRHQ/fir-cli/blob/master/doc/install.md" target="_blank" rel="external">安装及常见安装问题</a> </li>
-<li><a href="https://github.com/FIRHQ/fir-cli/blob/master/README.md" target="_blank" rel="external"><strong>fir-cli安装指南</strong></a>。</li>
-</ul>
-<h2 id="发布到Fir-im"><a href="#发布到Fir-im" class="headerlink" title="发布到Fir.im"></a>发布到Fir.im</h2><p>使用<code>fir publish</code>进行上传。(记得更改Token的值)</p>
-<blockquote>
-<p>fir publish /Users/wangnan/Documents/TestProject/2017-Test/FastlaneInstall/fastlane/build/FastlaneInstall.ipa -T 71b45ade02c8ccd29677f5aea1267cf3 -c 更新</p>
-</blockquote>
-<figure class="highlight plain"><figcaption><span>[--token=TOKEN]              # User's API Token at fir.im```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">`-c, [--changelog=CHANGELOG]      # Set changelog`</div><div class="line"></div><div class="line">`fir publish APP_FILE_PATH       # Publish iOS/Android app to …`</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[**Gym**](https://github.com/fastlane/fastlane/tree/master/gym)</div><div class="line"></div><div class="line">Gym常用配置项：</div><div class="line"></div><div class="line">| **Name**         | **Type**    | **Description**                          | **Default**                    |</div><div class="line">| ---------------- | ----------- | ---------------------------------------- | ------------------------------ |</div><div class="line">| scheme           | string      | 指定需要编译的scheme                            |                                |</div><div class="line">| clean            | bool        | 是否在编译前clean                              | false                          |</div><div class="line">| output_directory | string      | 导出目录                                     | ./                             |</div><div class="line">| output_name      | string      | 导出ipa名字                                  | [app_name].ipa                 |</div><div class="line">| export_options   | hash/string | 这里指定Xcode API的外部配置文件地址，或者配置hash，见下文      |                                |</div><div class="line">| export_method    | string      | 打包方式，可选项app-store ad-hoc package enterprise development developer-id | 如果在fastlane中使用了sigh，这个值会从上下文获取 |</div><div class="line">| include_bitcode  | bool        | 是否开启bitcode                              | Xcode API 默认值为true             |</div><div class="line">| include_symbols  | bool        | 是否生成符号表                                  | Xcode API 默认值为true             |</div><div class="line"></div><div class="line">Xcode7之后，Xcode API允许我们指定一个plist文件作为额外的配置文件。gym默认会帮你创建这个文件，你可以直接指定配置。更多关于plist可配置项，执行xcodebuild -help查看Available keys for -exportOptionsPlist。</div><div class="line"></div><div class="line">export_method， include_symbols，和include_bitcode 这些参数都是exportOptionsPlist的配置，对应method，uploadSymbols和uploadBitcode。</div><div class="line"></div><div class="line">Gym可以指定配置文件[Gymfile](https://github.com/fastlane/fastlane/tree/master/gym#gymfile)。 初始化：</div><div class="line"></div><div class="line">&gt; 使用 ``` gym init</div></pre></td></tr></table></figure>
-<p><a href="https://github.com/whlsxl/firim" target="_blank" rel="external"><strong>Firim</strong></a></p>
-<p>Fir.im是一个ipa托管网站。你可以用AdHoc或者In-House的方式打包，上传到fir.im发送给测试人员测试。需要先<a href="http://account.fir.im/users/sign_up" target="_blank" rel="external">注册Fir.im帐户</a>，并生成Token。这种方式适合：</p>
-<ul>
-<li>小团队 =&gt; 测试的机器数量很少并且非常可控。直接连上开发机，真机调试一次，就可以添加</li>
-<li>企业帐户 =&gt; 可以直接打In-House的包</li>
-</ul>
-<p>Firim常用配置项：</p>
-<table>
-<thead>
-<tr>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Default</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>firim_api_token</td>
-<td>string</td>
-<td>指定fir.im的token</td>
-<td></td>
-</tr>
-<tr>
-<td>ipa</td>
-<td>string</td>
-<td>ipa地址</td>
-<td>如果使用gym，可以通过上下文获取</td>
-</tr>
-<tr>
-<td>icon</td>
-<td>string</td>
-<td>icon的path，注意这里有个非常坑的地方，fir.im只支持jpg格式的图片</td>
-</tr>
-</tbody>
-</table>
-<p>还有项如app_name等等，是用来配置fir.im页面属性的。firim –help</p>
-<p>Firim的配置文件是Firimfile。初始化：</p>
-<blockquote>
-<p><code>firim init</code></p>
-</blockquote>
-<p>Firim是我完全仿照fastlane组件的方式写的，所以也可以单独作为CLI使用。</p>
-<p>如果有任何Firim的问题请到<a href="https://github.com/whlsxl/firim/issues" target="_blank" rel="external">Firim的issues</a>提问。</p>
-<h2 id="步骤总结"><a href="#步骤总结" class="headerlink" title="步骤总结"></a>步骤总结</h2><ol>
-<li><p>进入到项目的目录下，（包含<em>*</em>.xcodeproj的目录）；</p>
-</li>
-<li><p>命令行输入：<code>fastlane init</code> ，初始化fastlane；</p>
-</li>
-<li><p>配置Fastlane，可以看上面的<code>Fastfile配置</code>;</p>
-</li>
-<li><p>在工程的Info.plist里添加一个键值对：key: <code>Current project version</code>, value: <code>$(CURRENT_PROJECT_VERSION)</code>,是为了fastlane 的插件<code>versioning</code>可以获取版本号信息;</p>
-</li>
-<li><p>打包ipa，命令行输入：<code>fastlane toipa version:1.0.3</code>  或 <code>fastlane toipa v:1.0.4</code> 或 <code>fastlane toipa</code> （使用项目中所设置的 Bundle versions string, short作为版本号）；</p>
-</li>
-<li><p>上传到fir：进入到已打包的ipa包的目录下，使用<code>fir publish</code>命令进行上传。（<u><strong>记得更改Token的值</strong></u>！！！），组长的账号的API Token是：<code>8657ecd5332c5e5efd248d593968b14d</code>，e.g. </p>
-<blockquote>
-<p>fir publish /Users/wangnan/Documents/TestProject/2017-Test/FastlaneInstall/fastlane/build/FastlaneInstall.ipa -T 8657ecd5332c5e5efd248d593968b14d -c 修复bug…</p>
-</blockquote>
-<p><code>-T, [--token=TOKEN]              # User&#39;s API Token at fir.im</code></p>
-<p><code>-c, [--changelog=CHANGELOG]      # Set changelog</code></p>
-<p><code>fir publish APP_FILE_PATH       # Publish iOS/Android app to …</code></p>
-</li>
-</ol>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>1.<a href="https://whlsxl.github.io" target="_blank" rel="external">小团队的自动化发布－Fastlane带来的全自动化发布</a></p>
-<p>2.<a href="http://www.jianshu.com/p/0b22d6a8969d#" target="_blank" rel="external">iOS持续集成从入门到放弃(1)</a></p>
-
-          
+          <h1 id="fastlane-简介"><a href="#fastlane-简介" class="headerlink" title="fastlane 简介"></a>fastlane 简介</h1><p><a href="https://fastlane.tools/">fastlane 官网</a>，<a href="https://github.com/fastlane/fastlane">fastlane 的 github</a>，fastlane命令是一个流程控制的命令行工具(CLI)，通过内部集成action和第三方的action完成一系列控制流程。运行fastlane命令行工具，会读取当前目录或者./fastlane目录下的Fastfile配置文件。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/23/Fastlane 使用入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
