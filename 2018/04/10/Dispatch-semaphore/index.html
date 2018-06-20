@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Cycript," />
+  <meta name="keywords" content="Dispatch_semaphore," />
 
 
 
@@ -79,42 +79,19 @@
 
 
 
-<meta name="description" content="运行
-
-12iPhone:~$ cycriptcy#
-
-退出cycript
-
-
-Control+D，来退出Cydia">
+<meta name="description" content="Dispatch Semaphore是持有计数的信号，该信号是多线程编程中的计数类型信号。在Dispatch Semaphore中使用了计数来实现该功能。计数为0时等待，计数为1或者大于1时放行。
+信号量的使用方法比较简单，主要就三个API：create、wait和signal。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cycript使用">
-<meta property="og:url" content="http://yoursite.com/2018/02/09/Cycript使用/index.html">
+<meta property="og:title" content="Dispatch_semaphore">
+<meta property="og:url" content="http://yoursite.com/2018/04/10/Dispatch-semaphore/index.html">
 <meta property="og:site_name" content="王楠的Blog">
-<meta property="og:description" content="运行
-
-12iPhone:~$ cycriptcy#
-
-退出cycript
-
-
-Control+D，来退出Cydia">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/138251-2bc9e328e9735b32.png">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/138251-d598d19420126a04.png">
-<meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Cycript-1.png?raw=true">
-<meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Cycript-2.png?raw=true">
-<meta property="og:updated_time" content="2018-03-16T09:12:09.000Z">
+<meta property="og:description" content="Dispatch Semaphore是持有计数的信号，该信号是多线程编程中的计数类型信号。在Dispatch Semaphore中使用了计数来实现该功能。计数为0时等待，计数为1或者大于1时放行。
+信号量的使用方法比较简单，主要就三个API：create、wait和signal。">
+<meta property="og:updated_time" content="2018-06-20T08:30:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cycript使用">
-<meta name="twitter:description" content="运行
-
-12iPhone:~$ cycriptcy#
-
-退出cycript
-
-
-Control+D，来退出Cydia">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/138251-2bc9e328e9735b32.png">
+<meta name="twitter:title" content="Dispatch_semaphore">
+<meta name="twitter:description" content="Dispatch Semaphore是持有计数的信号，该信号是多线程编程中的计数类型信号。在Dispatch Semaphore中使用了计数来实现该功能。计数为0时等待，计数为1或者大于1时放行。
+信号量的使用方法比较简单，主要就三个API：create、wait和signal。">
 
 
 
@@ -144,13 +121,13 @@ Control+D，来退出Cydia">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/09/Cycript使用/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/10/Dispatch-semaphore/"/>
 
 
 
 
 
-  <title>Cycript使用 | 王楠的Blog</title>
+  <title>Dispatch_semaphore | 王楠的Blog</title>
   
 
 
@@ -259,7 +236,7 @@ Control+D，来退出Cydia">
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/09/Cycript使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/Dispatch-semaphore/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王楠">
@@ -276,7 +253,7 @@ Control+D，来退出Cydia">
 
         
         
-          <h1 class="post-title" itemprop="name headline">Cycript使用</h1>
+          <h1 class="post-title" itemprop="name headline">Dispatch_semaphore</h1>
         
 
         <div class="post-meta">
@@ -288,8 +265,8 @@ Control+D，来退出Cydia">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T13:59:13+08:00">
-                2018-02-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T16:27:02+08:00">
+                2018-04-10
               </time>
             
 
@@ -311,8 +288,8 @@ Control+D，来退出Cydia">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Cycript/" itemprop="url" rel="index">
-                    <span itemprop="name">Cycript</span>
+                  <a href="/categories/Dispatch-semaphore/" itemprop="url" rel="index">
+                    <span itemprop="name">Dispatch_semaphore</span>
                   </a>
                 </span>
 
@@ -348,63 +325,16 @@ Control+D，来退出Cydia">
       
 
       
-        <ul>
-<li>运行</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">iPhone:~$ cycript</div><div class="line">cy#</div></pre></td></tr></table></figure>
-<ul>
-<li>退出cycript</li>
-</ul>
-<blockquote>
-<p><code>Control+D</code>，来退出<code>Cydia</code></p>
-</blockquote>
-<a id="more"></a>
-<ul>
-<li>查看当前机器的所有进程</li>
-</ul>
-<blockquote>
-<p>使用命令<code>ps -e</code>，之后可以看到下面的QQMusic。</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/138251-2bc9e328e9735b32.png" width="600px"></p>
-<ul>
-<li>确定进程</li>
-</ul>
-<blockquote>
-<p>ps aux | grep <em>QQMusic</em></p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/138251-d598d19420126a04.png" width="600px"></p>
-<ul>
-<li>Cycript钩住QQ音乐进程</li>
-</ul>
-<blockquote>
-<p>cycript -p 45025</p>
-</blockquote>
-<p><strong>简单实践：</strong></p>
-<ul>
-<li>更改手机锁屏时滑动解锁文字</li>
-</ul>
-<p>钩住进程： </p>
-<blockquote>
-<p>cycript -p SpringBoard </p>
-</blockquote>
-<p>查看 </p>
-<blockquote>
-<p> UIApp.keyWindow.recursiveDescription<strong>()</strong> </p>
-</blockquote>
-<p>获取对象：</p>
-<blockquote>
-<p>var manager = SBLockScreenManager.sharedInstance<strong>()</strong></p>
-<p>var controller = <strong>[</strong>manager lockScreenViewController<strong>]</strong>  </p>
-<p>var view = controller.lockScreenView<strong>()</strong> </p>
-</blockquote>
-<p>设置锁屏文字：</p>
-<blockquote>
-<p><strong>[</strong>view setCustomSlideToUnlockText<strong>:</strong> “Wangnan”<strong>]</strong></p>
-</blockquote>
-<p>步骤及效果截图：</p>
-<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Cycript-1.png?raw=true" width="600px"></p>
-<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Cycript-2.png?raw=true" width="300px"></p>
-<p><a href="http://www.cycript.org/" target="_blank" rel="external">Cycript官网</a>   <a href="http://iphonedevwiki.net/index.php/Cycript_Tricks" target="_blank" rel="external">Cycript基维</a></p>
+        <p><code>Dispatch Semaphore</code>是持有计数的信号，该信号是多线程编程中的计数类型信号。在<code>Dispatch Semaphore</code>中使用了计数来实现该功能。计数为0时等待，计数为1或者大于1时放行。</p>
+<p>信号量的使用方法比较简单，主要就三个API：<code>create</code>、<code>wait</code>和<code>signal</code>。<br><a id="more"></a></p>
+<p>##dispatch_semaphore_create(long value)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dispatch_semaphore_create(long value)</div><div class="line">用初始值创建新的计数信号量。</div><div class="line">当两个线程需要协调特定事件的完成时，将值传递给零值非常有用。传递大于零的值对于管理池大小等于该值的有限资源池非常有用。</div><div class="line">当你的应用程序不再需要信号量时，它应该调用dispatch_release来释放它对信号量对象的引用并最终释放它的内存。</div><div class="line">重要：调用dispatch_semaphore_signal必须与调用wait()进行平衡。尝试处理计数小于值的信号量会导致EXC_BAD_INSTRUCTION异常。</div></pre></td></tr></table></figure>
+<p>##dispatch_semaphore_signal(dispatch_semaphore_t dsema)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dispatch_semaphore_signal(semaphore) </div><div class="line">增加计数信号量。如果前一个值小于零，则此函数会唤醒当前在dispatch_semaphore_wait中等待的线程。</div></pre></td></tr></table></figure>
+<p>##dispatch_semaphore_wait(dispatch_semaphore_t dsema, dispatch_time_t timeout)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) </div><div class="line">减少计数信号量。如果结果值小于零，则此函数在返回之前等待信号发生。</div></pre></td></tr></table></figure>
+<p>##简单使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// AFNetworking中dispatch_semaphore的使用</div><div class="line">- (NSArray *)tasksForKeyPath:(NSString *)keyPath &#123;</div><div class="line">    __block NSArray *tasks = nil;</div><div class="line">    // 初始一个信号量值为0</div><div class="line">    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);</div><div class="line">    [self.session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) &#123;</div><div class="line">        if ([keyPath isEqualToString:NSStringFromSelector(@selector(dataTasks))]) &#123;</div><div class="line">            tasks = dataTasks;</div><div class="line">        &#125; else if ([keyPath isEqualToString:NSStringFromSelector(@selector(uploadTasks))]) &#123;</div><div class="line">            tasks = uploadTasks;</div><div class="line">        &#125; else if ([keyPath isEqualToString:NSStringFromSelector(@selector(downloadTasks))]) &#123;</div><div class="line">            tasks = downloadTasks;</div><div class="line">        &#125; else if ([keyPath isEqualToString:NSStringFromSelector(@selector(tasks))]) &#123;</div><div class="line">            tasks = [@[dataTasks, uploadTasks, downloadTasks] valueForKeyPath:@&quot;@unionOfArrays.self&quot;];</div><div class="line">        &#125;</div><div class="line">        // 将信号量值加一，如果value大于0立即返回，否则唤醒某个等待中的线程</div><div class="line">        dispatch_semaphore_signal(semaphore);</div><div class="line">    &#125;];</div><div class="line">    // wait会将信号量值减一，如果大于等于0就立即返回，否则等待信号量唤醒或者超时</div><div class="line">    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</div><div class="line"></div><div class="line">    return tasks;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -422,7 +352,7 @@ Control+D，来退出Cydia">
       
         <div class="post-tags">
           
-            <a href="/tags/Cycript/" rel="tag"># Cycript</a>
+            <a href="/tags/Dispatch-semaphore/" rel="tag"># Dispatch_semaphore</a>
           
         </div>
       
@@ -435,8 +365,8 @@ Control+D，来退出Cydia">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/25/使用命令行操作iOS模拟器/" rel="next" title="使用命令行操作iOS模拟器">
-                <i class="fa fa-chevron-left"></i> 使用命令行操作iOS模拟器
+              <a href="/2018/03/09/Mach-O初探/" rel="next" title="Mach-O初探">
+                <i class="fa fa-chevron-left"></i> Mach-O初探
               </a>
             
           </div>
@@ -444,10 +374,6 @@ Control+D，来退出Cydia">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/09/Mach-O初探/" rel="prev" title="Mach-O初探">
-                Mach-O初探 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
