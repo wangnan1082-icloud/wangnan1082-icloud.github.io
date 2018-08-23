@@ -89,7 +89,7 @@
 <meta property="og:description" content="注册CocoaPods账号
 123&amp;gt; // 注册新的账户和用户名&amp;gt; pod trunk register example@example.com &apos;nameABC&apos;  --verbose&amp;gt;
 123&amp;gt; // 查看已注册信息&amp;gt; pod trunk me&amp;gt;">
-<meta property="og:updated_time" content="2018-08-22T07:59:31.000Z">
+<meta property="og:updated_time" content="2018-08-23T01:28:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods公共库的创建">
 <meta name="twitter:description" content="注册CocoaPods账号
@@ -365,7 +365,7 @@
 <h2 id="发布example-podspec"><a href="#发布example-podspec" class="headerlink" title="发布example.podspec"></a>发布<code>example.podspec</code></h2><p>最后一步，发布项目的描述的文件 <code>example.podspec</code></p>
 <p>在仓库目录下执行</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod trunk <span class="built_in">push</span> <span class="built_in">example</span>.podspec</div></pre></td></tr></table></figure>
-<p>将你的 <code>BYPhoneNumTF.podspec</code> 发布到公有的speecs上,这一步其实做了很多操作,包括</p>
+<p>将你的 <code>example.podspec</code> 发布到公有的speecs上,这一步其实做了很多操作,包括</p>
 <ol>
 <li><p>更新本地 pods 库</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~/<span class="selector-class">.cocoaPods</span><span class="selector-class">.repo</span>/master</div></pre></td></tr></table></figure>
@@ -377,7 +377,7 @@
 </li>
 </ol>
 <p>成功后将会出现下列信息：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Updating spec repo `master`</div><div class="line">Validating podspec</div><div class="line"> -&gt; example (<span class="number">1.0</span><span class="number">.0</span>)</div><div class="line"></div><div class="line">Updating spec repo `master`</div><div class="line"></div><div class="line">--------------------------------------------------------------------------------</div><div class="line"> 🎉  Congrats</div><div class="line"></div><div class="line"> 🚀  example (<span class="number">1.0</span><span class="number">.0</span>) successfully published</div><div class="line"> 📅  March <span class="number">17</span>th, <span class="number">11</span>:<span class="number">33</span></div><div class="line"> 🌎  https:<span class="comment">//cocoapods.org/pods/BYPhoneNumTF</span></div><div class="line"> 👍  Tell your friends!</div></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Updating spec repo `master`</div><div class="line">Validating podspec</div><div class="line"> -&gt; example (<span class="number">1.0</span><span class="number">.0</span>)</div><div class="line"></div><div class="line">Updating spec repo `master`</div><div class="line"></div><div class="line">--------------------------------------------------------------------------------</div><div class="line"> 🎉  Congrats</div><div class="line"></div><div class="line"> 🚀  example (<span class="number">1.0</span><span class="number">.0</span>) successfully published</div><div class="line"> 📅  March <span class="number">17</span>th, <span class="number">11</span>:<span class="number">33</span></div><div class="line"> 🌎  https:<span class="comment">//cocoapods.org/pods/example</span></div><div class="line"> 👍  Tell your friends!</div></pre></td></tr></table></figure>
 <p>说明发布成功，你就可以通过上面的URL: <a href="https://cocoapods.org/pods/example" target="_blank" rel="external">https://cocoapods.org/pods/example</a> 进入的Pods查看自己的仓库信息了.</p>
 <h2 id="更新本地仓库"><a href="#更新本地仓库" class="headerlink" title="更新本地仓库"></a>更新本地仓库</h2><p>发布到Cocoapods后，在终端更新本地pods仓库信息</p>
 <blockquote>
