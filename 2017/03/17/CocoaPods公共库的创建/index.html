@@ -89,7 +89,7 @@
 <meta property="og:description" content="注册CocoaPods账号
 123&amp;gt; // 注册新的账户和用户名&amp;gt; pod trunk register example@example.com &apos;nameABC&apos;  --verbose&amp;gt;
 123&amp;gt; // 查看已注册信息&amp;gt; pod trunk me&amp;gt;">
-<meta property="og:updated_time" content="2018-08-23T01:28:30.000Z">
+<meta property="og:updated_time" content="2018-09-04T02:36:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods公共库的创建">
 <meta name="twitter:description" content="注册CocoaPods账号
@@ -356,7 +356,7 @@
 <p>这时就会在你的仓库下生成 <code>example.podspec</code> 文件</p>
 <p>填写文件的配置信息</p>
 <p>填写完成之后，验证 <code>example.podspec</code> 文件的格式是否正确，</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod <span class="class"><span class="keyword">lib</span> <span class="title">lint</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod <span class="class"><span class="keyword">lib</span> <span class="title">lint</span> --<span class="title">allow</span>-<span class="title">warnings</span></span></div></pre></td></tr></table></figure>
 <p>验证会出现成功出现</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> <span class="selector-tag">-</span>&gt; <span class="selector-tag">example</span> (1<span class="selector-class">.0</span><span class="selector-class">.0</span>)</div><div class="line"></div><div class="line"><span class="selector-tag">example</span> <span class="selector-tag">passed</span> <span class="selector-tag">validation</span>.</div></pre></td></tr></table></figure>
 <h2 id="给仓库打标签"><a href="#给仓库打标签" class="headerlink" title="给仓库打标签"></a>给仓库打标签</h2><p>验证成功后，将仓库提交到远程，然后给仓库打上标签并将标签也推送到远程。</p>
@@ -364,7 +364,7 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">创建标签</div><div class="line">$ git tag -a <span class="number">1.0</span>.<span class="number">0</span> -m <span class="string">'标签说明'</span> </div><div class="line">推送到远程</div><div class="line">$ git push origin --tags</div></pre></td></tr></table></figure>
 <h2 id="发布example-podspec"><a href="#发布example-podspec" class="headerlink" title="发布example.podspec"></a>发布<code>example.podspec</code></h2><p>最后一步，发布项目的描述的文件 <code>example.podspec</code></p>
 <p>在仓库目录下执行</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod trunk <span class="built_in">push</span> <span class="built_in">example</span>.podspec</div></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod trunk <span class="built_in">push</span> <span class="built_in">example</span>.podspec --allow-<span class="built_in">warnings</span> --<span class="built_in">verbose</span></div></pre></td></tr></table></figure>
 <p>将你的 <code>example.podspec</code> 发布到公有的speecs上,这一步其实做了很多操作,包括</p>
 <ol>
 <li><p>更新本地 pods 库</p>
