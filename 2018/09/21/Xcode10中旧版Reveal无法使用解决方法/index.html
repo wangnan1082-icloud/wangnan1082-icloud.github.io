@@ -82,7 +82,8 @@
 <meta name="description" content="升级Xcode10时没有更新到最新版的Reveal会报这个错误，
 error: target x86_64-apple-ios10.0.0 is not supported by Reveal Server.
 记录一下升级Xcode10时没有更新到最新版的Reveal的同学可以修改一下这里，更改原来断点命令reveal load 为
-expr (Class)NSClassFromString(@”">
+
+expr (Class)NSClassFromString(@">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode10中旧版Reveal无法使用解决方法">
 <meta property="og:url" content="http://yoursite.com/2018/09/21/Xcode10中旧版Reveal无法使用解决方法/index.html">
@@ -90,14 +91,16 @@ expr (Class)NSClassFromString(@”">
 <meta property="og:description" content="升级Xcode10时没有更新到最新版的Reveal会报这个错误，
 error: target x86_64-apple-ios10.0.0 is not supported by Reveal Server.
 记录一下升级Xcode10时没有更新到最新版的Reveal的同学可以修改一下这里，更改原来断点命令reveal load 为
-expr (Class)NSClassFromString(@”">
-<meta property="og:updated_time" content="2018-09-21T09:32:53.000Z">
+
+expr (Class)NSClassFromString(@">
+<meta property="og:updated_time" content="2018-09-29T06:43:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode10中旧版Reveal无法使用解决方法">
 <meta name="twitter:description" content="升级Xcode10时没有更新到最新版的Reveal会报这个错误，
 error: target x86_64-apple-ios10.0.0 is not supported by Reveal Server.
 记录一下升级Xcode10时没有更新到最新版的Reveal的同学可以修改一下这里，更改原来断点命令reveal load 为
-expr (Class)NSClassFromString(@”">
+
+expr (Class)NSClassFromString(@">
 
 
 
@@ -341,12 +344,14 @@ expr (Class)NSClassFromString(@”">
       
 
       
-        <p>升级Xcode10时没有更新到最新版的Reveal会报这个错误，</p>
+        <p>升级<code>Xcode10</code>时没有更新到最新版的<code>Reveal</code>会报这个错误，</p>
 <pre><code>error: target x86_64-apple-ios10.0.0 is not supported by Reveal Server.
 </code></pre><p>记录一下升级Xcode10时没有更新到最新版的Reveal的同学可以修改一下这里，更改原来断点命令reveal load 为</p>
+<blockquote>
 <p>expr (Class)NSClassFromString(@”IBARevealLoader”) == nil ? (void <em>)dlopen(“/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework/RevealServer”, 0x2) : ((void</em>)0)</p>
-<p>这里需要注意一下，如果应用里有多个Reveal，要记得改为最新的，我的应用里就是Reveal-2，</p>
-<p>参考自官网解答： 地址</p>
+</blockquote>
+<p>这里需要注意一下，如果应用里有多个<code>Reveal</code>，要记得改为最新的，我的应用里就是<code>Reveal-2</code>，</p>
+<p>参考自<code>Reveal</code>官网解答： <a href="http://support.revealapp.com/kb/known-issues/breakpoint-integration-of-reveal-15-and-older-is-not-compatible-with-xcode-10" target="_blank" rel="external">地址</a></p>
 
       
     </div>
