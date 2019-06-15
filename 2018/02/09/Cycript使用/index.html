@@ -79,41 +79,122 @@
 
 
 
-<meta name="description" content="运行
+<meta name="description" content="基本使用
+运行cycript
 
 12iPhone:~$ cycriptcy#
 
 退出cycript
 
 
-Control+D，来退出Cydia">
+Control+D，来退出Cycript
+
+
+查看当前机器的所有进程
+
+
+使用命令ps -e，之后可以看到下面的QQMusic。
+
+
+
+确定进程
+
+
+ps aux | grep QQMusic
+
+
+
+Cycript钩住QQ音乐进程
+
+
+cycript -p 45025
+
+
+打印视图层级
+
+
+UI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cycript使用">
 <meta property="og:url" content="http://yoursite.com/2018/02/09/Cycript使用/index.html">
 <meta property="og:site_name" content="王楠的Blog">
-<meta property="og:description" content="运行
+<meta property="og:description" content="基本使用
+运行cycript
 
 12iPhone:~$ cycriptcy#
 
 退出cycript
 
 
-Control+D，来退出Cydia">
+Control+D，来退出Cycript
+
+
+查看当前机器的所有进程
+
+
+使用命令ps -e，之后可以看到下面的QQMusic。
+
+
+
+确定进程
+
+
+ps aux | grep QQMusic
+
+
+
+Cycript钩住QQ音乐进程
+
+
+cycript -p 45025
+
+
+打印视图层级
+
+
+UI">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/138251-2bc9e328e9735b32.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/138251-d598d19420126a04.png">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Cycript-1.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Cycript-2.png?raw=true">
-<meta property="og:updated_time" content="2018-03-16T09:12:09.000Z">
+<meta property="og:updated_time" content="2019-06-15T03:34:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cycript使用">
-<meta name="twitter:description" content="运行
+<meta name="twitter:description" content="基本使用
+运行cycript
 
 12iPhone:~$ cycriptcy#
 
 退出cycript
 
 
-Control+D，来退出Cydia">
+Control+D，来退出Cycript
+
+
+查看当前机器的所有进程
+
+
+使用命令ps -e，之后可以看到下面的QQMusic。
+
+
+
+确定进程
+
+
+ps aux | grep QQMusic
+
+
+
+Cycript钩住QQ音乐进程
+
+
+cycript -p 45025
+
+
+打印视图层级
+
+
+UI">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/138251-2bc9e328e9735b32.png">
 
 
@@ -358,17 +439,16 @@ Control+D，来退出Cydia">
       
 
       
-        <ul>
-<li>运行</li>
+        <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ul>
+<li>运行cycript</li>
 </ul>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">iPhone:</span>~$ cycript</div><div class="line">cy<span class="meta">#</span></div></pre></td></tr></table></figure>
 <ul>
 <li>退出cycript</li>
 </ul>
 <blockquote>
-<p><code>Control+D</code>，来退出<code>Cydia</code></p>
+<p><code>Control+D</code>，来退出<code>Cycript</code></p>
 </blockquote>
-<a id="more"></a>
 <ul>
 <li>查看当前机器的所有进程</li>
 </ul>
@@ -380,7 +460,7 @@ Control+D，来退出Cydia">
 <li>确定进程</li>
 </ul>
 <blockquote>
-<p>ps aux | grep <em>QQMusic</em></p>
+<p>ps aux | grep QQMusic</p>
 </blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/138251-d598d19420126a04.png" width="600px"></p>
 <ul>
@@ -389,15 +469,41 @@ Control+D，来退出Cydia">
 <blockquote>
 <p>cycript -p 45025</p>
 </blockquote>
-<p><strong>简单实践：</strong></p>
 <ul>
+<li>打印视图层级</li>
+</ul>
+<blockquote>
+<p>UIApp.keyWindow.recursiveDescription().toString()</p>
+</blockquote>
+<ul>
+<li>choose传递一个类，可以在内存中找出属于这个类的所有对象</li>
+</ul>
+<blockquote>
+<p>choose(UITextField)</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a>进阶使用</h2><p>使用MJ的<a href="https://github.com/CoderMJLee/mjcript" target="_blank" rel="external">MJCript</a>，来方便使用打印。具体使用方法可查看链接。</p>
+<p>下载好mjcript.cy，</p>
+<blockquote>
+<p>// 复制到越狱手机</p>
+<p>scp /Users/Downloads/mjcript-master/mjcript.cy root@192.168.32.125:/usr/lib/cycript0.9</p>
+<p>// 引入</p>
+<p>@import mjcript</p>
+<p>// 开始使用</p>
+<p>MJRootVc()    // 根控制器</p>
+<p>MJFrontVc()    // 最前面的ViewConroller</p>
+<p>MJFrontVcSubViews()    // 递归打印最上层UIViewController view的层级结构</p>
+<p>MJSubviews(#0x16293c00)</p>
+<p>MJInstanceMethods()    // 打印所有的对象方法</p>
+</blockquote>
+<h2 id="简单实践"><a href="#简单实践" class="headerlink" title="简单实践"></a>简单实践</h2><ul>
 <li>更改手机锁屏时滑动解锁文字</li>
 </ul>
-<p>钩住进程： </p>
+<p>钩住<code>SpringBoard</code>进程： </p>
 <blockquote>
 <p>cycript -p SpringBoard </p>
 </blockquote>
-<p>查看 </p>
+<p>查看View层级关系</p>
 <blockquote>
 <p> UIApp.keyWindow.recursiveDescription<strong>()</strong> </p>
 </blockquote>
@@ -414,7 +520,9 @@ Control+D，来退出Cydia">
 <p>步骤及效果截图：</p>
 <p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Cycript-1.png?raw=true" width="600px"></p>
 <p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Cycript-2.png?raw=true" width="300px"></p>
-<p><a href="http://www.cycript.org/" target="_blank" rel="external">Cycript官网</a>   <a href="http://iphonedevwiki.net/index.php/Cycript_Tricks" target="_blank" rel="external">Cycript基维</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.cycript.org/" target="_blank" rel="external">Cycript官网</a> </p>
+<p><a href="http://iphonedevwiki.net/index.php/Cycript_Tricks" target="_blank" rel="external">Cycript_Tricks</a></p>
+<p><a href="https://github.com/CoderMJLee/mjcript" target="_blank" rel="external">mjcript</a></p>
 
       
     </div>
@@ -509,8 +617,17 @@ Control+D，来退出Cydia">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -584,6 +701,22 @@ Control+D，来退出Cydia">
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶使用"><span class="nav-number">2.</span> <span class="nav-text">进阶使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单实践"><span class="nav-number">3.</span> <span class="nav-text">简单实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

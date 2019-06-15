@@ -780,15 +780,47 @@
 
       
         
-          <ul>
-<li>运行</li>
+          <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ul>
+<li>运行cycript</li>
 </ul>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">iPhone:</span>~$ cycript</div><div class="line">cy<span class="meta">#</span></div></pre></td></tr></table></figure>
 <ul>
 <li>退出cycript</li>
 </ul>
 <blockquote>
-<p><code>Control+D</code>，来退出<code>Cydia</code></p>
+<p><code>Control+D</code>，来退出<code>Cycript</code></p>
+</blockquote>
+<ul>
+<li>查看当前机器的所有进程</li>
+</ul>
+<blockquote>
+<p>使用命令<code>ps -e</code>，之后可以看到下面的QQMusic。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/138251-2bc9e328e9735b32.png" width="600px" /></p>
+<ul>
+<li>确定进程</li>
+</ul>
+<blockquote>
+<p>ps aux | grep QQMusic</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/138251-d598d19420126a04.png" width="600px" /></p>
+<ul>
+<li>Cycript钩住QQ音乐进程</li>
+</ul>
+<blockquote>
+<p>cycript -p 45025</p>
+</blockquote>
+<ul>
+<li>打印视图层级</li>
+</ul>
+<blockquote>
+<p>UIApp.keyWindow.recursiveDescription().toString()</p>
+</blockquote>
+<ul>
+<li>choose传递一个类，可以在内存中找出属于这个类的所有对象</li>
+</ul>
+<blockquote>
+<p>choose(UITextField)</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
