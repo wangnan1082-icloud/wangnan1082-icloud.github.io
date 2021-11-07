@@ -1,143 +1,56 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Mach-O," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、数据区Data包含Segment&amp;amp;Section。
-
-Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以及加载命令等信息
-加载命令（Load Command）：描述了文件中数据的具体组">
+  <meta name="description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、数据区Data包含Segment&amp;Section。  Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以及加载命令等信息 加载命令（Load Command）：描述了文件中数据的具体组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mach-O初探">
-<meta property="og:url" content="http://yoursite.com/2018/03/09/Mach-O初探/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/03/09/Mach-O%E5%88%9D%E6%8E%A2/index.html">
 <meta property="og:site_name" content="王楠的Blog">
-<meta property="og:description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、数据区Data包含Segment&amp;amp;Section。
-
-Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以及加载命令等信息
-加载命令（Load Command）：描述了文件中数据的具体组">
+<meta property="og:description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、数据区Data包含Segment&amp;Section。  Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以及加载命令等信息 加载命令（Load Command）：描述了文件中数据的具体组">
+<meta property="og:locale">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-1.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-2.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-3.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-5.png?raw=true">
-<meta property="og:updated_time" content="2018-06-29T05:43:57.000Z">
+<meta property="article:published_time" content="2018-03-09T02:20:49.000Z">
+<meta property="article:modified_time" content="2018-06-29T05:43:57.112Z">
+<meta property="article:author" content="王楠">
+<meta property="article:tag" content="Mach-O">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mach-O初探">
-<meta name="twitter:description" content="Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头Header、加载命令Load commands、数据区Data包含Segment&amp;amp;Section。
-
-Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以及加载命令等信息
-加载命令（Load Command）：描述了文件中数据的具体组">
 <meta name="twitter:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true">
 
+<link rel="canonical" href="http://yoursite.com/2018/03/09/Mach-O%E5%88%9D%E6%8E%A2/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/03/09/Mach-O初探/"/>
-
-
-
-
 
   <title>Mach-O初探 | 王楠的Blog</title>
   
@@ -147,204 +60,166 @@ Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">王楠的Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">记录点滴！</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">王楠的Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录点滴！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/Mach-O初探/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/Mach-O%E5%88%9D%E6%8E%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Mach-O初探</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Mach-O初探
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T10:20:49+08:00">
-                2018-03-09
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mach-O/" itemprop="url" rel="index">
-                    <span itemprop="name">Mach-O</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2018-03-09 10:20:49" itemprop="dateCreated datePublished" datetime="2018-03-09T10:20:49+08:00">2018-03-09</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-06-29 13:43:57" itemprop="dateModified" datetime="2018-06-29T13:43:57+08:00">2018-06-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mach-O/" itemprop="url" rel="index"><span itemprop="name">Mach-O</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <p>Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头<code>Header</code>、加载命令<code>Load commands</code>、数据区<code>Data</code>包含<code>Segment&amp;Section</code>。</p>
@@ -353,13 +228,13 @@ Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以
 <li>加载命令（Load Command）：描述了文件中数据的具体组织结构，不同的数据类型使用不同的加载命令表示</li>
 <li>数据区（Data）：Data 中每一个段（Segment）的数据都保存在此，段都拥有一个或多个 Section ，用来存放数据和代码。</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 <p>官方文档中的结构：</p>
-<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true" width="300px"></p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-4.png?raw=true" width="300px" /></p>
 <p>使用<code>MachOView</code>打开结构如下：</p>
-<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-1.png?raw=true" width="300px"></p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-1.png?raw=true" width="300px" /></p>
 <h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a><strong>Header</strong></h2><p>Header中包含Mach-O的基本信息，它在文件中的作用主要是：使系统能够快速定位其运行环境以及文件类型等等。Header结构：</p>
-<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-2.png?raw=true" width="600px"></p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-2.png?raw=true" width="600px" /></p>
 <ul>
 <li><code>magic：</code>魔数，用于快速确认该文件用于64位还是32位</li>
 <li><code>cputype：</code>CPU类型，比如 arm</li>
@@ -372,9 +247,9 @@ Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以
 <li><code>reserved：</code>64位的保留位</li>
 <li><code>flags：</code>dyld加载标志位，其中，<code>MH_PIE</code>标识启动地址空间布局随机化</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * The 32-bit mach header appears at the very beginning of the object file for</div><div class="line"> * 32-bit architectures.</div><div class="line"> */</div><div class="line"><span class="keyword">struct</span> mach_header &#123;</div><div class="line">	<span class="keyword">uint32_t</span>	magic;		<span class="comment">/* mach magic number identifier */</span></div><div class="line">	<span class="keyword">cpu_type_t</span>	cputype;	<span class="comment">/* cpu specifier */</span></div><div class="line">	<span class="keyword">cpu_subtype_t</span>	cpusubtype;	<span class="comment">/* machine specifier */</span></div><div class="line">	<span class="keyword">uint32_t</span>	filetype;	<span class="comment">/* type of file */</span></div><div class="line">	<span class="keyword">uint32_t</span>	ncmds;		<span class="comment">/* number of load commands */</span></div><div class="line">	<span class="keyword">uint32_t</span>	sizeofcmds;	<span class="comment">/* the size of all the load commands */</span></div><div class="line">	<span class="keyword">uint32_t</span>	flags;		<span class="comment">/* flags */</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/* Constant for the magic field of the mach_header (32-bit architectures) */</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span>	MH_MAGIC	0xfeedface	<span class="comment">/* the mach magic number */</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MH_CIGAM	0xcefaedfe	<span class="comment">/* NXSwapInt(MH_MAGIC) */</span></span></div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * The 64-bit mach header appears at the very beginning of object files for</div><div class="line"> * 64-bit architectures.</div><div class="line"> */</div><div class="line"><span class="keyword">struct</span> mach_header_64 &#123;</div><div class="line">	<span class="keyword">uint32_t</span>	magic;		<span class="comment">/* mach magic number identifier */</span></div><div class="line">	<span class="keyword">cpu_type_t</span>	cputype;	<span class="comment">/* cpu specifier */</span></div><div class="line">	<span class="keyword">cpu_subtype_t</span>	cpusubtype;	<span class="comment">/* machine specifier */</span></div><div class="line">	<span class="keyword">uint32_t</span>	filetype;	<span class="comment">/* type of file */</span></div><div class="line">	<span class="keyword">uint32_t</span>	ncmds;		<span class="comment">/* number of load commands */</span></div><div class="line">	<span class="keyword">uint32_t</span>	sizeofcmds;	<span class="comment">/* the size of all the load commands */</span></div><div class="line">	<span class="keyword">uint32_t</span>	flags;		<span class="comment">/* flags */</span></div><div class="line">	<span class="keyword">uint32_t</span>	reserved;	<span class="comment">/* reserved */</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">/* Constant for the magic field of the mach_header_64 (64-bit architectures) */</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MH_MAGIC_64 0xfeedfacf <span class="comment">/* the 64-bit mach magic number */</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MH_CIGAM_64 0xcffaedfe <span class="comment">/* NXSwapInt(MH_MAGIC_64) */</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * The 32-bit mach header appears at the very beginning of the object file for</span></span><br><span class="line"><span class="comment"> * 32-bit architectures.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mach_header</span> &#123;</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	magic;		<span class="comment">/* mach magic number identifier */</span></span><br><span class="line">	<span class="keyword">cpu_type_t</span>	cputype;	<span class="comment">/* cpu specifier */</span></span><br><span class="line">	<span class="keyword">cpu_subtype_t</span>	cpusubtype;	<span class="comment">/* machine specifier */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	filetype;	<span class="comment">/* type of file */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	ncmds;		<span class="comment">/* number of load commands */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	sizeofcmds;	<span class="comment">/* the size of all the load commands */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	flags;		<span class="comment">/* flags */</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Constant for the magic field of the mach_header (32-bit architectures) */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>	MH_MAGIC	0xfeedface	<span class="comment">/* the mach magic number */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MH_CIGAM	0xcefaedfe	<span class="comment">/* NXSwapInt(MH_MAGIC) */</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * The 64-bit mach header appears at the very beginning of object files for</span></span><br><span class="line"><span class="comment"> * 64-bit architectures.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mach_header_64</span> &#123;</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	magic;		<span class="comment">/* mach magic number identifier */</span></span><br><span class="line">	<span class="keyword">cpu_type_t</span>	cputype;	<span class="comment">/* cpu specifier */</span></span><br><span class="line">	<span class="keyword">cpu_subtype_t</span>	cpusubtype;	<span class="comment">/* machine specifier */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	filetype;	<span class="comment">/* type of file */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	ncmds;		<span class="comment">/* number of load commands */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	sizeofcmds;	<span class="comment">/* the size of all the load commands */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	flags;		<span class="comment">/* flags */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	reserved;	<span class="comment">/* reserved */</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/* Constant for the magic field of the mach_header_64 (64-bit architectures) */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MH_MAGIC_64 0xfeedfacf <span class="comment">/* the 64-bit mach magic number */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MH_CIGAM_64 0xcffaedfe <span class="comment">/* NXSwapInt(MH_MAGIC_64) */</span></span></span><br></pre></td></tr></table></figure>
 <h2 id="Load-commands"><a href="#Load-commands" class="headerlink" title="Load commands"></a><strong>Load commands</strong></h2><p><code>Load Commands</code> 告诉操作系统应当如何加载文件中的数据，对系统内核加载器和动态链接器起指导作用。</p>
-<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-3.png?raw=true" width="600px"></p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-3.png?raw=true" width="600px" /></p>
 <p><code>Load Commands</code>包含以下部分：</p>
 <ul>
 <li>LC_SEGMENT_64:定义一个段，加载后被映射到内存中，包括里面的节</li>
@@ -389,282 +264,192 @@ Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以
 <li>LC_FUNCTION_STARTS:函数起始地址表，使调试器和其他程序能很容易的看到一个地址是否在函数内</li>
 <li>LC_CODE_SIGNATURE:代码签名信息</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * The load commands directly follow the mach_header.  The total size of all</div><div class="line"> * of the commands is given by the sizeofcmds field in the mach_header.  All</div><div class="line"> * load commands must have as their first two fields cmd and cmdsize.  The cmd</div><div class="line"> * field is filled in with a constant for that command type.  Each command type</div><div class="line"> * has a structure specifically for it.  The cmdsize field is the size in bytes</div><div class="line"> * of the particular load command structure plus anything that follows it that</div><div class="line"> * is a part of the load command (i.e. section structures, strings, etc.).  To</div><div class="line"> * advance to the next load command the cmdsize can be added to the offset or</div><div class="line"> * pointer of the current load command.  The cmdsize for 32-bit architectures</div><div class="line"> * MUST be a multiple of 4 bytes and for 64-bit architectures MUST be a multiple</div><div class="line"> * of 8 bytes (these are forever the maximum alignment of any load commands).</div><div class="line"> * The padded bytes must be zero.  All tables in the object file must also</div><div class="line"> * follow these rules so the file can be memory mapped.  Otherwise the pointers</div><div class="line"> * to these tables will not work well or at all on some machines.  With all</div><div class="line"> * padding zeroed like objects will compare byte for byte.</div><div class="line"> */</div><div class="line"><span class="keyword">struct</span> load_command &#123;</div><div class="line">	<span class="keyword">uint32_t</span> cmd;		<span class="comment">/* load command 的类型*/</span></div><div class="line">	<span class="keyword">uint32_t</span> cmdsize;	<span class="comment">/* load command 结构的大小 */</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * The load commands directly follow the mach_header.  The total size of all</span></span><br><span class="line"><span class="comment"> * of the commands is given by the sizeofcmds field in the mach_header.  All</span></span><br><span class="line"><span class="comment"> * load commands must have as their first two fields cmd and cmdsize.  The cmd</span></span><br><span class="line"><span class="comment"> * field is filled in with a constant for that command type.  Each command type</span></span><br><span class="line"><span class="comment"> * has a structure specifically for it.  The cmdsize field is the size in bytes</span></span><br><span class="line"><span class="comment"> * of the particular load command structure plus anything that follows it that</span></span><br><span class="line"><span class="comment"> * is a part of the load command (i.e. section structures, strings, etc.).  To</span></span><br><span class="line"><span class="comment"> * advance to the next load command the cmdsize can be added to the offset or</span></span><br><span class="line"><span class="comment"> * pointer of the current load command.  The cmdsize for 32-bit architectures</span></span><br><span class="line"><span class="comment"> * MUST be a multiple of 4 bytes and for 64-bit architectures MUST be a multiple</span></span><br><span class="line"><span class="comment"> * of 8 bytes (these are forever the maximum alignment of any load commands).</span></span><br><span class="line"><span class="comment"> * The padded bytes must be zero.  All tables in the object file must also</span></span><br><span class="line"><span class="comment"> * follow these rules so the file can be memory mapped.  Otherwise the pointers</span></span><br><span class="line"><span class="comment"> * to these tables will not work well or at all on some machines.  With all</span></span><br><span class="line"><span class="comment"> * padding zeroed like objects will compare byte for byte.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">load_command</span> &#123;</span></span><br><span class="line">	<span class="keyword">uint32_t</span> cmd;		<span class="comment">/* load command 的类型*/</span></span><br><span class="line">	<span class="keyword">uint32_t</span> cmdsize;	<span class="comment">/* load command 结构的大小 */</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="Segment-amp-Section"><a href="#Segment-amp-Section" class="headerlink" title="Segment&amp;Section"></a><strong>Segment&amp;Section</strong></h2><p>加载数据时，主要加载的就是LC_SEGMET或LC_SEGMENT_64。</p>
 <p>LCSEGMENT以及LC_SEGMENT_64的数据结构：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * The 64-bit segment load command indicates that a part of this file is to be</div><div class="line"> * mapped into a 64-bit task's address space.  If the 64-bit segment has</div><div class="line"> * sections then section_64 structures directly follow the 64-bit segment</div><div class="line"> * command and their size is reflected in cmdsize.</div><div class="line"> */</div><div class="line"><span class="keyword">struct</span> segment_command_64 &#123; <span class="comment">/* for 64-bit architectures */</span></div><div class="line">	<span class="keyword">uint32_t</span>	cmd;		<span class="comment">/* LC_SEGMENT_64 */</span></div><div class="line">	<span class="keyword">uint32_t</span>	cmdsize;	<span class="comment">/* section_64 结构体所需要的空间 */</span></div><div class="line">	<span class="keyword">char</span>		segname[<span class="number">16</span>];	<span class="comment">/* segment 名字 */</span></div><div class="line">	<span class="keyword">uint64_t</span>	vmaddr;		<span class="comment">/* 所描述段的虚拟内存地址 */</span></div><div class="line">	<span class="keyword">uint64_t</span>	vmsize;		<span class="comment">/* 为当前段分配的虚拟内存大小 */</span></div><div class="line">	<span class="keyword">uint64_t</span>	fileoff;	<span class="comment">/* 当前段在文件中的偏移量 */</span></div><div class="line">	<span class="keyword">uint64_t</span>	filesize;	<span class="comment">/* 当前段在文件中占用的字节 */</span></div><div class="line">	<span class="keyword">vm_prot_t</span>	maxprot;	<span class="comment">/* 段所在页所需要的最高内存保护，用八进制表示 */</span></div><div class="line">	<span class="keyword">vm_prot_t</span>	initprot;	<span class="comment">/* 段所在页原始内存保护 */</span></div><div class="line">	<span class="keyword">uint32_t</span>	nsects;		<span class="comment">/* 段中 Section 数量 */</span></div><div class="line">	<span class="keyword">uint32_t</span>	flags;		<span class="comment">/* flags */</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * The 64-bit segment load command indicates that a part of this file is to be</span></span><br><span class="line"><span class="comment"> * mapped into a 64-bit task&#x27;s address space.  If the 64-bit segment has</span></span><br><span class="line"><span class="comment"> * sections then section_64 structures directly follow the 64-bit segment</span></span><br><span class="line"><span class="comment"> * command and their size is reflected in cmdsize.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">segment_command_64</span> &#123;</span> <span class="comment">/* for 64-bit architectures */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	cmd;		<span class="comment">/* LC_SEGMENT_64 */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	cmdsize;	<span class="comment">/* section_64 结构体所需要的空间 */</span></span><br><span class="line">	<span class="keyword">char</span>		segname[<span class="number">16</span>];	<span class="comment">/* segment 名字 */</span></span><br><span class="line">	<span class="keyword">uint64_t</span>	vmaddr;		<span class="comment">/* 所描述段的虚拟内存地址 */</span></span><br><span class="line">	<span class="keyword">uint64_t</span>	vmsize;		<span class="comment">/* 为当前段分配的虚拟内存大小 */</span></span><br><span class="line">	<span class="keyword">uint64_t</span>	fileoff;	<span class="comment">/* 当前段在文件中的偏移量 */</span></span><br><span class="line">	<span class="keyword">uint64_t</span>	filesize;	<span class="comment">/* 当前段在文件中占用的字节 */</span></span><br><span class="line">	<span class="keyword">vm_prot_t</span>	maxprot;	<span class="comment">/* 段所在页所需要的最高内存保护，用八进制表示 */</span></span><br><span class="line">	<span class="keyword">vm_prot_t</span>	initprot;	<span class="comment">/* 段所在页原始内存保护 */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	nsects;		<span class="comment">/* 段中 Section 数量 */</span></span><br><span class="line">	<span class="keyword">uint32_t</span>	flags;		<span class="comment">/* flags */</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>微信包的Mach-O：</p>
-<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-5.png?raw=true" width="300px"></p>
-<h2 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h2><h3 id="Mach-O-Programming-Topics"><a href="#Mach-O-Programming-Topics" class="headerlink" title="Mach-O Programming Topics"></a><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html#//apple_ref/doc/uid/TP40001827-SW1" target="_blank" rel="external">Mach-O Programming Topics</a></h3><h3 id="苹果官方的mach-o-loader-h"><a href="#苹果官方的mach-o-loader-h" class="headerlink" title="苹果官方的mach-o/loader.h"></a><a href="https://opensource.apple.com/source/xnu/xnu-1456.1.26/EXTERNAL_HEADERS/mach-o/loader.h" target="_blank" rel="external">苹果官方的mach-o/loader.h</a></h3>
-      
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/Mach-O-5.png?raw=true" width="300px" /></p>
+<h2 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h2><h3 id="Mach-O-Programming-Topics"><a href="#Mach-O-Programming-Topics" class="headerlink" title="Mach-O Programming Topics"></a><a target="_blank" rel="noopener" href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html#//apple_ref/doc/uid/TP40001827-SW1">Mach-O Programming Topics</a></h3><h3 id="苹果官方的mach-o-loader-h"><a href="#苹果官方的mach-o-loader-h" class="headerlink" title="苹果官方的mach-o/loader.h"></a><a target="_blank" rel="noopener" href="https://opensource.apple.com/source/xnu/xnu-1456.1.26/EXTERNAL_HEADERS/mach-o/loader.h">苹果官方的mach-o/loader.h</a></h3>
     </div>
+
     
     
     
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Mach-O/" rel="tag"># Mach-O</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/02/09/Cycript使用/" rel="next" title="Cycript使用">
-                <i class="fa fa-chevron-left"></i> Cycript使用
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Mach-O/" rel="tag"># Mach-O</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/10/Dispatch-semaphore/" rel="prev" title="Dispatch_semaphore">
-                Dispatch_semaphore <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/02/09/Cycript%E4%BD%BF%E7%94%A8/" rel="prev" title="Cycript使用">
+      <i class="fa fa-chevron-left"></i> Cycript使用
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/04/10/Dispatch-semaphore/" rel="next" title="Dispatch_semaphore">
+      Dispatch_semaphore <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="王楠" />
-            
-              <p class="site-author-name" itemprop="name">王楠</p>
-              <p class="site-description motion-element" itemprop="description">王楠的Blog</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/wangnan1082-icloud" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Header"><span class="nav-number">1.</span> <span class="nav-text">Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-commands"><span class="nav-number">2.</span> <span class="nav-text">Load commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segment-amp-Section"><span class="nav-number">3.</span> <span class="nav-text">Segment&Section</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接："><span class="nav-number">4.</span> <span class="nav-text">参考链接：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mach-O-Programming-Topics"><span class="nav-number">4.1.</span> <span class="nav-text">Mach-O Programming Topics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#苹果官方的mach-o-loader-h"><span class="nav-number">4.2.</span> <span class="nav-text">苹果官方的mach-o/loader.h</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">王楠</span>
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Header"><span class="nav-number">1.</span> <span class="nav-text">Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-commands"><span class="nav-number">2.</span> <span class="nav-text">Load commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segment-amp-Section"><span class="nav-number">3.</span> <span class="nav-text">Segment&amp;Section</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">参考链接：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mach-O-Programming-Topics"><span class="nav-number">4.1.</span> <span class="nav-text">Mach-O Programming Topics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%B9%E6%9E%9C%E5%AE%98%E6%96%B9%E7%9A%84mach-o-loader-h"><span class="nav-number">4.2.</span> <span class="nav-text">苹果官方的mach-o&#x2F;loader.h</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王楠"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">王楠</p>
+  <div class="site-description" itemprop="description">王楠的Blog</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wangnan1082-icloud" title="GitHub → https://github.com/wangnan1082-icloud" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王楠</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -682,98 +467,6 @@ Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
 
 
 
@@ -781,16 +474,5 @@ Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以
 
   
 
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":120,"height":200,"position":"right","hOffset":20,"vOffset":50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

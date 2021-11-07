@@ -1,133 +1,55 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="OHHTTPStubs," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="OHHTTPStubs 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 json 数据，可以用来编写网络请求的单元测试。">
+  <meta name="description" content="OHHTTPStubs 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 json 数据，可以用来编写网络请求的单元测试。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 OHHTTPStubs">
-<meta property="og:url" content="http://yoursite.com/2017/12/25/使用 OHHTTPStubs/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/%E4%BD%BF%E7%94%A8%20OHHTTPStubs/index.html">
 <meta property="og:site_name" content="王楠的Blog">
 <meta property="og:description" content="OHHTTPStubs 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 json 数据，可以用来编写网络请求的单元测试。">
+<meta property="og:locale">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-1.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-2.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-3.png?raw=true">
 <meta property="og:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-4.png?raw=true">
-<meta property="og:updated_time" content="2018-04-20T01:48:19.000Z">
+<meta property="article:published_time" content="2017-12-25T03:05:18.000Z">
+<meta property="article:modified_time" content="2018-04-20T01:48:19.978Z">
+<meta property="article:author" content="王楠">
+<meta property="article:tag" content="OHHTTPStubs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 OHHTTPStubs">
-<meta name="twitter:description" content="OHHTTPStubs 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 json 数据，可以用来编写网络请求的单元测试。">
 <meta name="twitter:image" content="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-1.png?raw=true">
 
+<link rel="canonical" href="http://yoursite.com/2017/12/25/%E4%BD%BF%E7%94%A8%20OHHTTPStubs/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2017/12/25/使用 OHHTTPStubs/"/>
-
-
-
-
 
   <title>使用 OHHTTPStubs | 王楠的Blog</title>
   
@@ -137,196 +59,161 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">王楠的Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">记录点滴！</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">王楠的Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录点滴！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-OHHTTPStubs" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/使用 OHHTTPStubs/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/%E4%BD%BF%E7%94%A8%20OHHTTPStubs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">使用 OHHTTPStubs</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          使用 OHHTTPStubs
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T11:05:18+08:00">
-                2017-12-25
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OHHTTPStubs/" itemprop="url" rel="index">
-                    <span itemprop="name">OHHTTPStubs</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2017-12-25 11:05:18" itemprop="dateCreated datePublished" datetime="2017-12-25T11:05:18+08:00">2017-12-25</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-04-20 09:48:19" itemprop="dateModified" datetime="2018-04-20T09:48:19+08:00">2018-04-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OHHTTPStubs/" itemprop="url" rel="index"><span itemprop="name">OHHTTPStubs</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -334,298 +221,205 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p><a href="https://github.com/AliSoftware/OHHTTPStubs" target="_blank" rel="external">OHHTTPStubs</a> 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 <code>json</code> 数据，可以用来编写网络请求的单元测试。</p>
-<a id="more"></a>
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest * _Nonnull request) &#123;</div><div class="line">        return [request.URL.absoluteString isEqualToString:@&quot;http://www.test.com/test&quot;];</div><div class="line">    &#125; withStubResponse:^OHHTTPStubsResponse * _Nonnull(NSURLRequest * _Nonnull request) &#123;</div><div class="line">        NSString *fixture = OHPathForFile(@&quot;testData.json&quot;, self.class);</div><div class="line">        return [[OHHTTPStubsResponse responseWithFileAtPath:fixture statusCode:200 headers:@&#123;@&quot;Content-Type&quot;:@&quot;application/json&quot;&#125;] requestTime:1.0 responseTime:3.0];</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];</div><div class="line">    [manager GET:TestUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, responseObject);</div><div class="line">    &#125; failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, error.localizedDescription);</div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
+        <p><a target="_blank" rel="noopener" href="https://github.com/AliSoftware/OHHTTPStubs">OHHTTPStubs</a> 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 <code>json</code> 数据，可以用来编写网络请求的单元测试。</p>
+<span id="more"></span>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest * _Nonnull request) &#123;</span><br><span class="line">        return [request.URL.absoluteString isEqualToString:@&quot;http://www.test.com/test&quot;];</span><br><span class="line">    &#125; withStubResponse:^OHHTTPStubsResponse * _Nonnull(NSURLRequest * _Nonnull request) &#123;</span><br><span class="line">        NSString *fixture = OHPathForFile(@&quot;testData.json&quot;, self.class);</span><br><span class="line">        return [[OHHTTPStubsResponse responseWithFileAtPath:fixture statusCode:200 headers:@&#123;@&quot;Content-Type&quot;:@&quot;application/json&quot;&#125;] requestTime:1.0 responseTime:3.0];</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];</span><br><span class="line">    [manager GET:TestUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) &#123;</span><br><span class="line">        NSLog(@&quot;%@&quot;, responseObject);</span><br><span class="line">    &#125; failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) &#123;</span><br><span class="line">        NSLog(@&quot;%@&quot;, error.localizedDescription);</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
 <p>拦截域名为<code>http://www.test.com/test</code>的HTTP请求，并返回本地<code>testData.json</code>文件中的数据，并可以设置网络状态码为200，请求头格式，以及请求时间和响应时间。虽然这个 URL 并不存在，但是这里的代码通过 HTTP stub 成功地模拟了 HTTP 响应。</p>
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-1.png?raw=true" width="300px"></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="通过OHHTTPStubsProtocol-拦截-HTTP-请求"><a href="#通过OHHTTPStubsProtocol-拦截-HTTP-请求" class="headerlink" title="通过OHHTTPStubsProtocol 拦截 HTTP 请求"></a>通过<code>OHHTTPStubsProtocol</code> 拦截 HTTP 请求</h3><p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-2.png?raw=true" width="300px"></p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-1.png?raw=true" width="300px" /></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="通过OHHTTPStubsProtocol-拦截-HTTP-请求"><a href="#通过OHHTTPStubsProtocol-拦截-HTTP-请求" class="headerlink" title="通过OHHTTPStubsProtocol 拦截 HTTP 请求"></a>通过<code>OHHTTPStubsProtocol</code> 拦截 HTTP 请求</h3><p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-2.png?raw=true" width="300px" /></p>
 <p>重写上面的方法拦截 HTTP 请求。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 每次请求都应该是一个NSURLRequest对象，如果可以处理，返回YES，否则返回NO</span></div><div class="line">+ (BOOL)canInitWithRequest:(NSURLRequest *)request</div><div class="line">&#123;</div><div class="line">    BOOL found = ([OHHTTPStubs.sharedInstance firstStubPassingTestForRequest:request] != nil);</div><div class="line">    <span class="keyword">if</span> (!found &amp;&amp; OHHTTPStubs.sharedInstance.onStubMissingBlock) &#123;</div><div class="line">        OHHTTPStubs.sharedInstance.onStubMissingBlock(request);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> found;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每次请求都应该是一个NSURLRequest对象，如果可以处理，返回YES，否则返回NO</span></span><br><span class="line">+ (BOOL)canInitWithRequest:(NSURLRequest *)request</span><br><span class="line">&#123;</span><br><span class="line">    BOOL found = ([OHHTTPStubs.sharedInstance firstStubPassingTestForRequest:request] != nil);</span><br><span class="line">    <span class="keyword">if</span> (!found &amp;&amp; OHHTTPStubs.sharedInstance.onStubMissingBlock) &#123;</span><br><span class="line">        OHHTTPStubs.sharedInstance.onStubMissingBlock(request);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> found;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 返回OHHTTPStubsProtocol</span></div><div class="line">- (id)initWithRequest:(NSURLRequest *)request cachedResponse:(NSCachedURLResponse *)response client:(id&lt;NSURLProtocolClient&gt;)client</div><div class="line">&#123;</div><div class="line">    <span class="comment">// 这里每次都不使用缓存</span></div><div class="line">    OHHTTPStubsProtocol* proto = [super initWithRequest:request cachedResponse:nil client:client];</div><div class="line">    proto.stub = [OHHTTPStubs.sharedInstance firstStubPassingTestForRequest:request];</div><div class="line">    <span class="keyword">return</span> proto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回OHHTTPStubsProtocol</span></span><br><span class="line">- (id)initWithRequest:(NSURLRequest *)request cachedResponse:(NSCachedURLResponse *)response client:(id&lt;NSURLProtocolClient&gt;)client</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 这里每次都不使用缓存</span></span><br><span class="line">    OHHTTPStubsProtocol* proto = [super initWithRequest:request cachedResponse:nil client:client];</span><br><span class="line">    proto.stub = [OHHTTPStubs.sharedInstance firstStubPassingTestForRequest:request];</span><br><span class="line">    <span class="keyword">return</span> proto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 遍历自己持有的全部 stub，通过 testBlock 的调用返回第一个符合条件的 stub</span></div><div class="line">- (OHHTTPStubsDescriptor*)firstStubPassingTestForRequest:(NSURLRequest*)request</div><div class="line">&#123;</div><div class="line">    OHHTTPStubsDescriptor* foundStub = nil;</div><div class="line">    @synchronized(_stubDescriptors)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(OHHTTPStubsDescriptor* stub in _stubDescriptors.reverseObjectEnumerator)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (stub.testBlock(request))</div><div class="line">            &#123;</div><div class="line">                foundStub = stub;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> foundStub;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div></pre></td><td class="code"><pre><div class="line">// 发送请求处理</div><div class="line">- (void)startLoading</div><div class="line">&#123;</div><div class="line">    self.clientRunLoop = CFRunLoopGetCurrent();</div><div class="line">    NSURLRequest* request = self.request;</div><div class="line">    id&lt;NSURLProtocolClient&gt; client = self.client;</div><div class="line"></div><div class="line">    if (!self.stub)</div><div class="line">    &#123;</div><div class="line">        NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:</div><div class="line">                                  @"It seems like the stub has been removed BEFORE the response had time to be sent.",</div><div class="line">                                  NSLocalizedFailureReasonErrorKey,</div><div class="line">                                  @"For more info, see https://github.com/AliSoftware/OHHTTPStubs/wiki/OHHTTPStubs-and-asynchronous-tests",</div><div class="line">                                  NSLocalizedRecoverySuggestionErrorKey,</div><div class="line">                                  request.URL, // Stop right here if request.URL is nil</div><div class="line">                                  NSURLErrorFailingURLErrorKey,</div><div class="line">                                  nil];</div><div class="line">        NSError* error = [NSError errorWithDomain:@"OHHTTPStubs" code:500 userInfo:userInfo];</div><div class="line">        [client URLProtocol:self didFailWithError:error];</div><div class="line">        if (OHHTTPStubs.sharedInstance.afterStubFinishBlock)</div><div class="line">        &#123;</div><div class="line">        	// 在 stub 结束时调用</div><div class="line">            OHHTTPStubs.sharedInstance.afterStubFinishBlock(request, self.stub, nil, error);</div><div class="line">        &#125;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    OHHTTPStubsResponse* responseStub = self.stub.responseBlock(request);</div><div class="line"></div><div class="line">    if (OHHTTPStubs.sharedInstance.onStubActivationBlock)</div><div class="line">    &#123;</div><div class="line">        // stub 被激活时调用</div><div class="line">        OHHTTPStubs.sharedInstance.onStubActivationBlock(request, self.stub, responseStub);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if (responseStub.error == nil)</div><div class="line">    &#123;</div><div class="line">        NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL</div><div class="line">                                                                     statusCode:responseStub.statusCode</div><div class="line">                                                                    HTTPVersion:@"HTTP/1.1"</div><div class="line">                                                                   headerFields:responseStub.httpHeaders];</div><div class="line"></div><div class="line">        // Cookies 处理</div><div class="line">        if (request.HTTPShouldHandleCookies &amp;&amp; request.URL)</div><div class="line">        &#123;</div><div class="line">            NSArray* cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:responseStub.httpHeaders forURL:request.URL];</div><div class="line">            if (cookies)</div><div class="line">            &#123;</div><div class="line">                [NSHTTPCookieStorage.sharedHTTPCookieStorage setCookies:cookies forURL:request.URL mainDocumentURL:request.mainDocumentURL];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">        NSString* redirectLocation = (responseStub.httpHeaders)[@"Location"];</div><div class="line">        NSURL* redirectLocationURL;</div><div class="line">        if (redirectLocation)</div><div class="line">        &#123;</div><div class="line">            redirectLocationURL = [NSURL URLWithString:redirectLocation];</div><div class="line">        &#125;</div><div class="line">        else</div><div class="line">        &#123;</div><div class="line">            redirectLocationURL = nil;</div><div class="line">        &#125;</div><div class="line">        [self executeOnClientRunLoopAfterDelay:responseStub.requestTime block:^&#123;</div><div class="line">            if (!self.stopped)</div><div class="line">            &#123;</div><div class="line">                // 重定向处理</div><div class="line">                if (((responseStub.statusCode &gt; 300) &amp;&amp; (responseStub.statusCode &lt; 400)) &amp;&amp; redirectLocationURL)</div><div class="line">                &#123;</div><div class="line">                    NSURLRequest *redirectRequest;</div><div class="line">                    NSMutableURLRequest *mReq;</div><div class="line"></div><div class="line">                    switch (responseStub.statusCode)</div><div class="line">                    &#123;</div><div class="line">                        case 301:</div><div class="line">                        case 302:</div><div class="line">                        case 307:</div><div class="line">                        case 308:</div><div class="line">                            //Preserve the original request method and body, and set the new location URL</div><div class="line">                            mReq = [self.request mutableCopy];</div><div class="line">                            [mReq setURL:redirectLocationURL];</div><div class="line">                            redirectRequest = (NSURLRequest*)[mReq copy];</div><div class="line">                            break;</div><div class="line"></div><div class="line">                        default:</div><div class="line">                            redirectRequest = [NSURLRequest requestWithURL:redirectLocationURL];</div><div class="line">                            break;</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    [client URLProtocol:self wasRedirectedToRequest:redirectRequest redirectResponse:urlResponse];</div><div class="line">                    if (OHHTTPStubs.sharedInstance.onStubRedirectBlock)</div><div class="line">                    &#123;</div><div class="line">                        OHHTTPStubs.sharedInstance.onStubRedirectBlock(request, redirectRequest, self.stub, responseStub);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                // Send the response (even for redirections)</div><div class="line">                [client URLProtocol:self didReceiveResponse:urlResponse cacheStoragePolicy:NSURLCacheStorageNotAllowed];</div><div class="line">                if(responseStub.inputStream.streamStatus == NSStreamStatusNotOpen)</div><div class="line">                &#123;</div><div class="line">                    [responseStub.inputStream open];</div><div class="line">                &#125;</div><div class="line">                [self streamDataForClient:client</div><div class="line">                         withStubResponse:responseStub</div><div class="line">                               completion:^(NSError * error)</div><div class="line">                 &#123;</div><div class="line">                     [responseStub.inputStream close];</div><div class="line">                     NSError *blockError = nil;</div><div class="line">                     if (error==nil)</div><div class="line">                     &#123;</div><div class="line">                         [client URLProtocolDidFinishLoading:self];</div><div class="line">                     &#125;</div><div class="line">                     else</div><div class="line">                     &#123;</div><div class="line">                         [client URLProtocol:self didFailWithError:responseStub.error];</div><div class="line">                         blockError = responseStub.error;</div><div class="line">                     &#125;</div><div class="line">                     if (OHHTTPStubs.sharedInstance.afterStubFinishBlock)</div><div class="line">                     &#123;</div><div class="line">                         OHHTTPStubs.sharedInstance.afterStubFinishBlock(request, self.stub, responseStub, blockError);</div><div class="line">                     &#125;</div><div class="line">                 &#125;];</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">    &#125; else &#123;</div><div class="line">        // Send the canned error</div><div class="line">        [self executeOnClientRunLoopAfterDelay:responseStub.responseTime block:^&#123;</div><div class="line">            if (!self.stopped)</div><div class="line">            &#123;</div><div class="line">                [client URLProtocol:self didFailWithError:responseStub.error];</div><div class="line">                if (OHHTTPStubs.sharedInstance.afterStubFinishBlock)</div><div class="line">                &#123;</div><div class="line">                    OHHTTPStubs.sharedInstance.afterStubFinishBlock(request, self.stub, responseStub, responseStub.error);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 延迟处理操作 使用GCD来延迟执行</span></div><div class="line">- (<span class="keyword">void</span>)executeOnClientRunLoopAfterDelay:(NSTimeInterval)delayInSeconds block:(<span class="keyword">dispatch_block_t</span>)block</div><div class="line">&#123;</div><div class="line">    <span class="keyword">dispatch_time_t</span> popTime = dispatch_time(DISPATCH_TIME_NOW, (<span class="keyword">int64_t</span>)(delayInSeconds * NSEC_PER_SEC));</div><div class="line">    dispatch_after(popTime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line">    	<span class="comment">// 加入RunLoop队列</span></div><div class="line">        CFRunLoopPerformBlock(self.clientRunLoop, kCFRunLoopDefaultMode, block);</div><div class="line">        <span class="comment">// 立刻唤醒RunLoop</span></div><div class="line">        CFRunLoopWakeUp(self.clientRunLoop);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历自己持有的全部 stub，通过 testBlock 的调用返回第一个符合条件的 stub</span></span><br><span class="line">- (OHHTTPStubsDescriptor*)firstStubPassingTestForRequest:(NSURLRequest*)request</span><br><span class="line">&#123;</span><br><span class="line">    OHHTTPStubsDescriptor* foundStub = nil;</span><br><span class="line">    @synchronized(_stubDescriptors)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(OHHTTPStubsDescriptor* stub in _stubDescriptors.reverseObjectEnumerator)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (stub.testBlock(request))</span><br><span class="line">            &#123;</span><br><span class="line">                foundStub = stub;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> foundStub;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ 发送请求处理</span></span><br><span class="line"><span class="regexp">- (void)startLoading</span></span><br><span class="line"><span class="regexp">&#123;</span></span><br><span class="line"><span class="regexp">    self.clientRunLoop = CFRunLoopGetCurrent();</span></span><br><span class="line"><span class="regexp">    NSURLRequest* request = self.request;</span></span><br><span class="line"><span class="regexp">    id&lt;NSURLProtocolClient&gt; client = self.client;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    if (!self.stub)</span></span><br><span class="line"><span class="regexp">    &#123;</span></span><br><span class="line"><span class="regexp">        NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:</span></span><br><span class="line"><span class="regexp">                                  @&quot;It seems like the stub has been removed BEFORE the response had time to be sent.&quot;,</span></span><br><span class="line"><span class="regexp">                                  NSLocalizedFailureReasonErrorKey,</span></span><br><span class="line"><span class="regexp">                                  @&quot;For more info, see https:/</span><span class="regexp">/github.com/</span>AliSoftware/OHHTTPStubs/wiki/OHHTTPStubs-<span class="keyword">and</span>-asynchronous-tests<span class="string">&quot;,</span></span><br><span class="line"><span class="string">                                  NSLocalizedRecoverySuggestionErrorKey,</span></span><br><span class="line"><span class="string">                                  request.URL, // Stop right here if request.URL is nil</span></span><br><span class="line"><span class="string">                                  NSURLErrorFailingURLErrorKey,</span></span><br><span class="line"><span class="string">                                  nil];</span></span><br><span class="line"><span class="string">        NSError* error = [NSError errorWithDomain:@&quot;</span>OHHTTPStubs<span class="string">&quot; code:500 userInfo:userInfo];</span></span><br><span class="line"><span class="string">        [client URLProtocol:self didFailWithError:error];</span></span><br><span class="line"><span class="string">        if (OHHTTPStubs.sharedInstance.afterStubFinishBlock)</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">        	// 在 stub 结束时调用</span></span><br><span class="line"><span class="string">            OHHTTPStubs.sharedInstance.afterStubFinishBlock(request, self.stub, nil, error);</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        return;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    OHHTTPStubsResponse* responseStub = self.stub.responseBlock(request);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    if (OHHTTPStubs.sharedInstance.onStubActivationBlock)</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        // stub 被激活时调用</span></span><br><span class="line"><span class="string">        OHHTTPStubs.sharedInstance.onStubActivationBlock(request, self.stub, responseStub);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    if (responseStub.error == nil)</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL</span></span><br><span class="line"><span class="string">                                                                     statusCode:responseStub.statusCode</span></span><br><span class="line"><span class="string">                                                                    HTTPVersion:@&quot;</span>HTTP/<span class="number">1.1</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">                                                                   headerFields:responseStub.httpHeaders];</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        // Cookies 处理</span></span><br><span class="line"><span class="string">        if (request.HTTPShouldHandleCookies &amp;&amp; request.URL)</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            NSArray* cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:responseStub.httpHeaders forURL:request.URL];</span></span><br><span class="line"><span class="string">            if (cookies)</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">                [NSHTTPCookieStorage.sharedHTTPCookieStorage setCookies:cookies forURL:request.URL mainDocumentURL:request.mainDocumentURL];</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        NSString* redirectLocation = (responseStub.httpHeaders)[@&quot;</span>Location<span class="string">&quot;];</span></span><br><span class="line"><span class="string">        NSURL* redirectLocationURL;</span></span><br><span class="line"><span class="string">        if (redirectLocation)</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            redirectLocationURL = [NSURL URLWithString:redirectLocation];</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        else</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            redirectLocationURL = nil;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        [self executeOnClientRunLoopAfterDelay:responseStub.requestTime block:^&#123;</span></span><br><span class="line"><span class="string">            if (!self.stopped)</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">                // 重定向处理</span></span><br><span class="line"><span class="string">                if (((responseStub.statusCode &gt; 300) &amp;&amp; (responseStub.statusCode &lt; 400)) &amp;&amp; redirectLocationURL)</span></span><br><span class="line"><span class="string">                &#123;</span></span><br><span class="line"><span class="string">                    NSURLRequest *redirectRequest;</span></span><br><span class="line"><span class="string">                    NSMutableURLRequest *mReq;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                    switch (responseStub.statusCode)</span></span><br><span class="line"><span class="string">                    &#123;</span></span><br><span class="line"><span class="string">                        case 301:</span></span><br><span class="line"><span class="string">                        case 302:</span></span><br><span class="line"><span class="string">                        case 307:</span></span><br><span class="line"><span class="string">                        case 308:</span></span><br><span class="line"><span class="string">                            //Preserve the original request method and body, and set the new location URL</span></span><br><span class="line"><span class="string">                            mReq = [self.request mutableCopy];</span></span><br><span class="line"><span class="string">                            [mReq setURL:redirectLocationURL];</span></span><br><span class="line"><span class="string">                            redirectRequest = (NSURLRequest*)[mReq copy];</span></span><br><span class="line"><span class="string">                            break;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                        default:</span></span><br><span class="line"><span class="string">                            redirectRequest = [NSURLRequest requestWithURL:redirectLocationURL];</span></span><br><span class="line"><span class="string">                            break;</span></span><br><span class="line"><span class="string">                    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                    [client URLProtocol:self wasRedirectedToRequest:redirectRequest redirectResponse:urlResponse];</span></span><br><span class="line"><span class="string">                    if (OHHTTPStubs.sharedInstance.onStubRedirectBlock)</span></span><br><span class="line"><span class="string">                    &#123;</span></span><br><span class="line"><span class="string">                        OHHTTPStubs.sharedInstance.onStubRedirectBlock(request, redirectRequest, self.stub, responseStub);</span></span><br><span class="line"><span class="string">                    &#125;</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                // Send the response (even for redirections)</span></span><br><span class="line"><span class="string">                [client URLProtocol:self didReceiveResponse:urlResponse cacheStoragePolicy:NSURLCacheStorageNotAllowed];</span></span><br><span class="line"><span class="string">                if(responseStub.inputStream.streamStatus == NSStreamStatusNotOpen)</span></span><br><span class="line"><span class="string">                &#123;</span></span><br><span class="line"><span class="string">                    [responseStub.inputStream open];</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">                [self streamDataForClient:client</span></span><br><span class="line"><span class="string">                         withStubResponse:responseStub</span></span><br><span class="line"><span class="string">                               completion:^(NSError * error)</span></span><br><span class="line"><span class="string">                 &#123;</span></span><br><span class="line"><span class="string">                     [responseStub.inputStream close];</span></span><br><span class="line"><span class="string">                     NSError *blockError = nil;</span></span><br><span class="line"><span class="string">                     if (error==nil)</span></span><br><span class="line"><span class="string">                     &#123;</span></span><br><span class="line"><span class="string">                         [client URLProtocolDidFinishLoading:self];</span></span><br><span class="line"><span class="string">                     &#125;</span></span><br><span class="line"><span class="string">                     else</span></span><br><span class="line"><span class="string">                     &#123;</span></span><br><span class="line"><span class="string">                         [client URLProtocol:self didFailWithError:responseStub.error];</span></span><br><span class="line"><span class="string">                         blockError = responseStub.error;</span></span><br><span class="line"><span class="string">                     &#125;</span></span><br><span class="line"><span class="string">                     if (OHHTTPStubs.sharedInstance.afterStubFinishBlock)</span></span><br><span class="line"><span class="string">                     &#123;</span></span><br><span class="line"><span class="string">                         OHHTTPStubs.sharedInstance.afterStubFinishBlock(request, self.stub, responseStub, blockError);</span></span><br><span class="line"><span class="string">                     &#125;</span></span><br><span class="line"><span class="string">                 &#125;];</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;];</span></span><br><span class="line"><span class="string">    &#125; else &#123;</span></span><br><span class="line"><span class="string">        // Send the canned error</span></span><br><span class="line"><span class="string">        [self executeOnClientRunLoopAfterDelay:responseStub.responseTime block:^&#123;</span></span><br><span class="line"><span class="string">            if (!self.stopped)</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">                [client URLProtocol:self didFailWithError:responseStub.error];</span></span><br><span class="line"><span class="string">                if (OHHTTPStubs.sharedInstance.afterStubFinishBlock)</span></span><br><span class="line"><span class="string">                &#123;</span></span><br><span class="line"><span class="string">                    OHHTTPStubs.sharedInstance.afterStubFinishBlock(request, self.stub, responseStub, responseStub.error);</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;];</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 延迟处理操作 使用GCD来延迟执行</span></span><br><span class="line">- (<span class="keyword">void</span>)executeOnClientRunLoopAfterDelay:(NSTimeInterval)delayInSeconds block:(<span class="keyword">dispatch_block_t</span>)block</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">dispatch_time_t</span> popTime = dispatch_time(DISPATCH_TIME_NOW, (<span class="keyword">int64_t</span>)(delayInSeconds * NSEC_PER_SEC));</span><br><span class="line">    dispatch_after(popTime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line">    	<span class="comment">// 加入RunLoop队列</span></span><br><span class="line">        CFRunLoopPerformBlock(self.clientRunLoop, kCFRunLoopDefaultMode, block);</span><br><span class="line">        <span class="comment">// 立刻唤醒RunLoop</span></span><br><span class="line">        CFRunLoopWakeUp(self.clientRunLoop);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="OHHTTPStubsResponse-类用来伪造-HTTP-响应数据信息"><a href="#OHHTTPStubsResponse-类用来伪造-HTTP-响应数据信息" class="headerlink" title="OHHTTPStubsResponse 类用来伪造 HTTP 响应数据信息"></a><code>OHHTTPStubsResponse</code> 类用来伪造 HTTP 响应数据信息</h3><p>  <code>OHHTTPStubsResponse</code> 包含<code>HTTP headers</code>, <code>body</code>, <code>statusCode</code> and <code>response time</code></p>
-<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-3.png?raw=true" width="300px"></p>
+<p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-3.png?raw=true" width="300px" /></p>
 <p>通过上面的方法返回数据，数据的来源结合 <code>OHPathHelpers</code>来提供。</p>
-<h3 id="OHPathHelpers处理本地文件"><a href="#OHPathHelpers处理本地文件" class="headerlink" title="OHPathHelpers处理本地文件"></a><code>OHPathHelpers</code>处理本地文件</h3><p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-4.png?raw=true" width="300px"></p>
+<h3 id="OHPathHelpers处理本地文件"><a href="#OHPathHelpers处理本地文件" class="headerlink" title="OHPathHelpers处理本地文件"></a><code>OHPathHelpers</code>处理本地文件</h3><p><img src="https://github.com/wangnan1082-icloud/wangnan1082-icloud.github.io/blob/master/img/OHHTTPStubs-4.png?raw=true" width="300px" /></p>
 <p>根据文件名得到本地文件路径，辅助<code>OHHTTPStubsResponse</code>获取数据。</p>
 
-      
     </div>
+
     
     
     
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/OHHTTPStubs/" rel="tag"># OHHTTPStubs</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/03/23/Fastlane 使用入门/" rel="next" title="fastlane 使用入门">
-                <i class="fa fa-chevron-left"></i> fastlane 使用入门
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OHHTTPStubs/" rel="tag"># OHHTTPStubs</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/25/使用命令行操作iOS模拟器/" rel="prev" title="使用命令行操作iOS模拟器">
-                使用命令行操作iOS模拟器 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/03/23/Fastlane%20%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/" rel="prev" title="fastlane 使用入门">
+      <i class="fa fa-chevron-left"></i> fastlane 使用入门
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/12/25/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9CiOS%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="next" title="使用命令行操作iOS模拟器">
+      使用命令行操作iOS模拟器 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="王楠" />
-            
-              <p class="site-author-name" itemprop="name">王楠</p>
-              <p class="site-description motion-element" itemprop="description">王楠的Blog</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/wangnan1082-icloud" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构"><span class="nav-number">2.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过OHHTTPStubsProtocol-拦截-HTTP-请求"><span class="nav-number">3.1.</span> <span class="nav-text">通过OHHTTPStubsProtocol 拦截 HTTP 请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OHHTTPStubsResponse-类用来伪造-HTTP-响应数据信息"><span class="nav-number">3.2.</span> <span class="nav-text">OHHTTPStubsResponse 类用来伪造 HTTP 响应数据信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OHPathHelpers处理本地文件"><span class="nav-number">3.3.</span> <span class="nav-text">OHPathHelpers处理本地文件</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">王楠</span>
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87OHHTTPStubsProtocol-%E6%8B%A6%E6%88%AA-HTTP-%E8%AF%B7%E6%B1%82"><span class="nav-number">3.1.</span> <span class="nav-text">通过OHHTTPStubsProtocol 拦截 HTTP 请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OHHTTPStubsResponse-%E7%B1%BB%E7%94%A8%E6%9D%A5%E4%BC%AA%E9%80%A0-HTTP-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><span class="nav-number">3.2.</span> <span class="nav-text">OHHTTPStubsResponse 类用来伪造 HTTP 响应数据信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OHPathHelpers%E5%A4%84%E7%90%86%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">OHPathHelpers处理本地文件</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王楠"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">王楠</p>
+  <div class="site-description" itemprop="description">王楠的Blog</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wangnan1082-icloud" title="GitHub → https://github.com/wangnan1082-icloud" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王楠</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -643,98 +437,6 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
 
 
 
@@ -742,16 +444,5 @@
 
   
 
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":120,"height":200,"position":"right","hOffset":20,"vOffset":50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

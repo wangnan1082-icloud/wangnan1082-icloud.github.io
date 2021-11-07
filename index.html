@@ -1,127 +1,47 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="王楠的Blog">
+  <meta name="description" content="王楠的Blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="王楠的Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="王楠的Blog">
 <meta property="og:description" content="王楠的Blog">
+<meta property="og:locale">
+<meta property="article:author" content="王楠">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王楠的Blog">
-<meta name="twitter:description" content="王楠的Blog">
+
+<link rel="canonical" href="http://yoursite.com/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
 
   <title>王楠的Blog</title>
   
@@ -131,199 +51,161 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">王楠的Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">记录点滴！</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">王楠的Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录点滴！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content index posts-expand">
             
-  <section id="posts" class="posts-expand">
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/Xcode10中旧版Reveal无法使用解决方法/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/Xcode10%E4%B8%AD%E6%97%A7%E7%89%88Reveal%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/21/Xcode10中旧版Reveal无法使用解决方法/" itemprop="url">Xcode10中旧版Reveal无法使用解决方法</a></h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/09/21/Xcode10%E4%B8%AD%E6%97%A7%E7%89%88Reveal%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Xcode10中旧版Reveal无法使用解决方法</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-21T17:31:28+08:00">
-                2018-09-21
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Reveal/" itemprop="url" rel="index">
-                    <span itemprop="name">Reveal</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2018-09-21 17:31:28" itemprop="dateCreated datePublished" datetime="2018-09-21T17:31:28+08:00">2018-09-21</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-09-29 14:47:41" itemprop="dateModified" datetime="2018-09-29T14:47:41+08:00">2018-09-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Reveal/" itemprop="url" rel="index"><span itemprop="name">Reveal</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -331,146 +213,78 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <p>升级<code>Xcode10</code>时没有更新到最新版的<code>Reveal</code>会报这个错误，</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">error:</span> target x86_64-apple-ios1<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span> is <span class="keyword">not</span> supported by Reveal Server.</div></pre></td></tr></table></figure>
+          <p>升级<code>Xcode10</code>时没有更新到最新版的<code>Reveal</code>会报这个错误，</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">error:</span> target x86_64-apple-ios10.<span class="number">0.0</span> is <span class="keyword">not</span> supported by Reveal Server.</span><br></pre></td></tr></table></figure>
 <p>记录一下升级Xcode10时没有更新到最新版的Reveal的同学可以修改一下这里，更改原来断点命令reveal load 为</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">expr (Class)NSClassFromString(@<span class="string">"IBARevealLoader"</span>) == <span class="literal">nil</span> ? (void *)dlopen(<span class="string">"/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework/RevealServer"</span>, <span class="number">0x2</span>) : ((void*)<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expr (Class)NSClassFromString(@<span class="string">&quot;IBARevealLoader&quot;</span>) == <span class="literal">nil</span> ? (void *)dlopen(<span class="string">&quot;/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework/RevealServer&quot;</span>, <span class="number">0x2</span>) : ((void*)<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <p>这里需要注意一下，如果应用里有多个<code>Reveal</code>，要记得改为最新的，我的应用里就是<code>Reveal-2</code>，</p>
-<p>参考自<code>Reveal</code>官网解答： <a href="http://support.revealapp.com/kb/known-issues/breakpoint-integration-of-reveal-15-and-older-is-not-compatible-with-xcode-10" target="_blank" rel="external">地址</a></p>
+<p>参考自<code>Reveal</code>官网解答： <a target="_blank" rel="noopener" href="http://support.revealapp.com/kb/known-issues/breakpoint-integration-of-reveal-15-and-older-is-not-compatible-with-xcode-10">地址</a></p>
 
-          
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/Dispatch-semaphore/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/10/Dispatch-semaphore/" itemprop="url">Dispatch_semaphore</a></h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/04/10/Dispatch-semaphore/" class="post-title-link" itemprop="url">Dispatch_semaphore</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T16:27:02+08:00">
-                2018-04-10
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dispatch-semaphore/" itemprop="url" rel="index">
-                    <span itemprop="name">Dispatch_semaphore</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2018-04-10 16:27:02" itemprop="dateCreated datePublished" datetime="2018-04-10T16:27:02+08:00">2018-04-10</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-06-22 09:58:18" itemprop="dateModified" datetime="2018-06-22T09:58:18+08:00">2018-06-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dispatch-semaphore/" itemprop="url" rel="index"><span itemprop="name">Dispatch_semaphore</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -478,146 +292,81 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p><code>Dispatch Semaphore</code>是持有计数的信号，该信号是多线程编程中的计数类型信号。在<code>Dispatch Semaphore</code>中使用了计数来实现该功能。计数为0时等待，计数为1或者大于1时放行。</p>
 <p>信号量的使用方法比较简单，主要就三个API：<code>create</code>、<code>wait</code>和<code>signal</code>。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/10/Dispatch-semaphore/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2018/04/10/Dispatch-semaphore/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/Mach-O初探/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/Mach-O%E5%88%9D%E6%8E%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/09/Mach-O初探/" itemprop="url">Mach-O初探</a></h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/03/09/Mach-O%E5%88%9D%E6%8E%A2/" class="post-title-link" itemprop="url">Mach-O初探</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T10:20:49+08:00">
-                2018-03-09
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mach-O/" itemprop="url" rel="index">
-                    <span itemprop="name">Mach-O</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2018-03-09 10:20:49" itemprop="dateCreated datePublished" datetime="2018-03-09T10:20:49+08:00">2018-03-09</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-06-29 13:43:57" itemprop="dateModified" datetime="2018-06-29T13:43:57+08:00">2018-06-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mach-O/" itemprop="url" rel="index"><span itemprop="name">Mach-O</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -625,10 +374,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p>Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，一个Mach-O文件包含：文件头<code>Header</code>、加载命令<code>Load commands</code>、数据区<code>Data</code>包含<code>Segment&amp;Section</code>。</p>
 <ul>
 <li>Mach-O 头（Header）：这里描述了 Mach-O 的 CPU 架构、文件类型以及加载命令等信息</li>
@@ -636,139 +381,78 @@
 <li>数据区（Data）：Data 中每一个段（Segment）的数据都保存在此，段都拥有一个或多个 Section ，用来存放数据和代码。</li>
 </ul>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/09/Mach-O初探/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2018/03/09/Mach-O%E5%88%9D%E6%8E%A2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/09/Cycript使用/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/09/Cycript%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/09/Cycript使用/" itemprop="url">Cycript使用</a></h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/09/Cycript%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Cycript使用</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T13:59:13+08:00">
-                2018-02-09
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Cycript/" itemprop="url" rel="index">
-                    <span itemprop="name">Cycript</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2018-02-09 13:59:13" itemprop="dateCreated datePublished" datetime="2018-02-09T13:59:13+08:00">2018-02-09</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-06-15 11:34:44" itemprop="dateModified" datetime="2019-06-15T11:34:44+08:00">2019-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Cycript/" itemprop="url" rel="index"><span itemprop="name">Cycript</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -776,14 +460,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ul>
 <li>运行cycript</li>
 </ul>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">iPhone:</span>~$ cycript</div><div class="line">cy<span class="meta">#</span></div></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">iPhone:</span>~$ cycript</span><br><span class="line">cy<span class="meta"># </span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>退出cycript</li>
 </ul>
@@ -823,139 +503,78 @@
 <p>choose(UITextField)</p>
 </blockquote>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/09/Cycript使用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2018/02/09/Cycript%E4%BD%BF%E7%94%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-命令行" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/使用命令行操作iOS模拟器/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9CiOS%E6%A8%A1%E6%8B%9F%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/25/使用命令行操作iOS模拟器/" itemprop="url">使用命令行操作iOS模拟器</a></h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/12/25/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9CiOS%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="post-title-link" itemprop="url">使用命令行操作iOS模拟器</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T17:24:48+08:00">
-                2017-12-25
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/命令行/" itemprop="url" rel="index">
-                    <span itemprop="name">命令行</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2017-12-25 17:24:48" itemprop="dateCreated datePublished" datetime="2017-12-25T17:24:48+08:00">2017-12-25</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-03-16 17:11:59" itemprop="dateModified" datetime="2018-03-16T17:11:59+08:00">2018-03-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%91%BD%E4%BB%A4%E8%A1%8C/" itemprop="url" rel="index"><span itemprop="name">命令行</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -963,149 +582,84 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <h2 id="查看当前启动的模拟器"><a href="#查看当前启动的模拟器" class="headerlink" title="查看当前启动的模拟器"></a>查看当前启动的模拟器</h2><blockquote>
 <p>xcrun simctl list devices | grep Booted</p>
 <p>输出结果：</p>
 <p><strong>iPhone 7 (5F0B29B7-4243-41F6-BB57-132ACD9B7A2A) (Booted)</strong></p>
 </blockquote>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/25/使用命令行操作iOS模拟器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/12/25/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9CiOS%E6%A8%A1%E6%8B%9F%E5%99%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-OHHTTPStubs" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/使用 OHHTTPStubs/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/%E4%BD%BF%E7%94%A8%20OHHTTPStubs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/25/使用 OHHTTPStubs/" itemprop="url">使用 OHHTTPStubs</a></h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/12/25/%E4%BD%BF%E7%94%A8%20OHHTTPStubs/" class="post-title-link" itemprop="url">使用 OHHTTPStubs</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T11:05:18+08:00">
-                2017-12-25
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OHHTTPStubs/" itemprop="url" rel="index">
-                    <span itemprop="name">OHHTTPStubs</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2017-12-25 11:05:18" itemprop="dateCreated datePublished" datetime="2017-12-25T11:05:18+08:00">2017-12-25</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-04-20 09:48:19" itemprop="dateModified" datetime="2018-04-20T09:48:19+08:00">2018-04-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OHHTTPStubs/" itemprop="url" rel="index"><span itemprop="name">OHHTTPStubs</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1113,145 +667,80 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p><a href="https://github.com/AliSoftware/OHHTTPStubs">OHHTTPStubs</a> 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 <code>json</code> 数据，可以用来编写网络请求的单元测试。</p>
+          <p><a target="_blank" rel="noopener" href="https://github.com/AliSoftware/OHHTTPStubs">OHHTTPStubs</a> 可以在不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 <code>json</code> 数据，可以用来编写网络请求的单元测试。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/25/使用 OHHTTPStubs/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/12/25/%E4%BD%BF%E7%94%A8%20OHHTTPStubs/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-fastlane" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/Fastlane 使用入门/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/Fastlane%20%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/23/Fastlane 使用入门/" itemprop="url">fastlane 使用入门</a></h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/23/Fastlane%20%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">fastlane 使用入门</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T11:05:18+08:00">
-                2017-03-23
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/fastlane/" itemprop="url" rel="index">
-                    <span itemprop="name">fastlane</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2017-03-23 11:05:18" itemprop="dateCreated datePublished" datetime="2017-03-23T11:05:18+08:00">2017-03-23</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-04-19 15:22:29" itemprop="dateModified" datetime="2018-04-19T15:22:29+08:00">2018-04-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/fastlane/" itemprop="url" rel="index"><span itemprop="name">fastlane</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1259,145 +748,80 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <h1 id="fastlane-简介"><a href="#fastlane-简介" class="headerlink" title="fastlane 简介"></a>fastlane 简介</h1><p><a href="https://fastlane.tools/">fastlane 官网</a>，<a href="https://github.com/fastlane/fastlane">fastlane 的 github</a>，fastlane命令是一个流程控制的命令行工具(CLI)，通过内部集成action和第三方的action完成一系列控制流程。运行fastlane命令行工具，会读取当前目录或者./fastlane目录下的Fastfile配置文件。</p>
+          <h1 id="fastlane-简介"><a href="#fastlane-简介" class="headerlink" title="fastlane 简介"></a>fastlane 简介</h1><p><a target="_blank" rel="noopener" href="https://fastlane.tools/">fastlane 官网</a>，<a target="_blank" rel="noopener" href="https://github.com/fastlane/fastlane">fastlane 的 github</a>，fastlane命令是一个流程控制的命令行工具(CLI)，通过内部集成action和第三方的action完成一系列控制流程。运行fastlane命令行工具，会读取当前目录或者./fastlane目录下的Fastfile配置文件。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/23/Fastlane 使用入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/03/23/Fastlane%20%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/17/CocoaPods公共库的创建/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/17/CocoaPods%E5%85%AC%E5%85%B1%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王楠">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="王楠">
+      <meta itemprop="description" content="王楠的Blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="王楠的Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/17/CocoaPods公共库的创建/" itemprop="url">CocoaPods公共库的创建</a></h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/17/CocoaPods%E5%85%AC%E5%85%B1%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/" class="post-title-link" itemprop="url">CocoaPods公共库的创建</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T15:19:43+08:00">
-                2017-03-17
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CocoaPods/" itemprop="url" rel="index">
-                    <span itemprop="name">CocoaPods</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2017-03-17 15:19:43" itemprop="dateCreated datePublished" datetime="2017-03-17T15:19:43+08:00">2017-03-17</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-09-05 09:58:41" itemprop="dateModified" datetime="2018-09-05T09:58:41+08:00">2018-09-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CocoaPods/" itemprop="url" rel="index"><span itemprop="name">CocoaPods</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1405,235 +829,183 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <h2 id="注册CocoaPods账号"><a href="#注册CocoaPods账号" class="headerlink" title="注册CocoaPods账号"></a>注册CocoaPods账号</h2><blockquote>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="regexp">//</span> 注册新的账户和用户名</div><div class="line">&gt; pod trunk register example@example.com <span class="string">'nameABC'</span>  --verbose</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="regexp">//</span> 查看已注册信息</div><div class="line">&gt; pod trunk me</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ 注册新的账户和用户名</span></span><br><span class="line"><span class="regexp">pod trunk register example@example.com &#x27;nameABC&#x27;  --verbose</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ 查看已注册信息</span></span><br><span class="line"><span class="regexp">pod trunk me</span></span><br></pre></td></tr></table></figure>
 </blockquote>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/17/CocoaPods公共库的创建/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/03/17/CocoaPods%E5%85%AC%E5%85%B1%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
 
   
+
 
 
           </div>
           
 
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="王楠" />
-            
-              <p class="site-author-name" itemprop="name">王楠</p>
-              <p class="site-description motion-element" itemprop="description">王楠的Blog</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/wangnan1082-icloud" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">王楠</span>
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王楠"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">王楠</p>
+  <div class="site-description" itemprop="description">王楠的Blog</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wangnan1082-icloud" title="GitHub → https://github.com/wangnan1082-icloud" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王楠</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -1651,94 +1023,6 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
 
 
 
@@ -1746,16 +1030,5 @@
 
   
 
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":120,"height":200,"position":"right","hOffset":20,"vOffset":50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
