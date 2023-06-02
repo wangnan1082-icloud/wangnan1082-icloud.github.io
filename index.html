@@ -173,7 +173,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/06/02/iOSCrash%E6%9D%82%E8%AE%B0/" class="post-title-link" itemprop="url">iOSCrash杂记</a>
+            <a href="/2022/06/02/iOSCrash%E6%9D%82%E8%AE%B0/" class="post-title-link" itemprop="url">iOS Crash杂记</a>
         </h2>
 
         <div class="post-meta">
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-06-02 10:01:31" itemprop="dateModified" datetime="2023-06-02T10:01:31+08:00">2023-06-02</time>
+                <time title="Modified: 2023-06-02 10:08:45" itemprop="dateModified" datetime="2023-06-02T10:08:45+08:00">2023-06-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -222,24 +222,14 @@
 </ol>
 <p>解析崩溃信息的时候，可以先在桌面上建立一个Crash文件夹，然后将 <code>.crash</code> 、<code>.dSYM</code> 、<code>symbolicatecrash</code> 放在这个文件夹中，这样进入这个文件夹下，直接一行命令就可以了。</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ 执行命令开始符号化crash文件</span></span><br><span class="line"><span class="regexp">./symbolicatecrash</span> XX.crash  XX.app.dSYM &gt; xx.crash</span><br><span class="line">/<span class="regexp">/ 有时候终端有可能会出现：</span></span><br><span class="line"><span class="regexp">Error: &quot;DEVELOPER_DIR&quot; is not defined at ./symbolicatecrash</span> line <span class="number">69</span>.</span><br><span class="line">/<span class="regexp">/ 需要输入下面的命令：</span></span><br><span class="line"><span class="regexp">export DEVELOPER_DIR=&quot;/</span>Applications/XCode.app/Contents/Developer<span class="string">&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 解析举例：</span></span><br><span class="line"><span class="string">./symbolicatecrash /Users/username/Desktop/Demoruntime/testSys/ios12Crash.crash /Users/username/Desktop/Demoruntime/testSys/DemoTest.app.dSYM &gt; ios12SysCrash.crash</span></span><br></pre></td></tr></table></figure>
-<h3 id="使用-Xcode-分析崩溃日志"><a href="#使用-Xcode-分析崩溃日志" class="headerlink" title="使用 Xcode 分析崩溃日志"></a>使用 <code>Xcode</code> 分析崩溃日志</h3><p>通过 <code>Xcode</code> 打开 <code>window</code> -&gt; <code>Devices and Simulators</code> 或者直接快捷键 <code>Shift cdm 2</code> 设备管理页。点击 <code>View Device Logs</code>后，可以看到手机的崩溃日志。<code>Xcode</code> 会自动解析。 也可以把带解析的日志拖入该页，然后通过 <code>右键</code> –&gt; <code>Re-Symbolicate Log</code> 来重新解析。（所需的系统符号表文件需提前导入到 <code>/Users/userName/Library/Developer/Xcode/iOS DeviceSupport</code> 路径下）</p>
-<h2 id="UUID"><a href="#UUID" class="headerlink" title="UUID"></a>UUID</h2><h2 id="获取dSYM文件中的UUID"><a href="#获取dSYM文件中的UUID" class="headerlink" title="获取dSYM文件中的UUID"></a>获取dSYM文件中的UUID</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ 进入到dSYM文件夹中，使用如下命令</span></span><br><span class="line"><span class="regexp">dwarfdump --uuid AppName.app.dSYM</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 打印如下</span></span><br><span class="line"><span class="regexp">UUID: CBFCB3CD-8DC1-3236-A936-53C2E2BA78AC (armv7) AppName.app.dSYM/</span>Contents/Resources/DWARF/AppName</span><br><span class="line"><span class="symbol">UUID:</span> 2CA49492-1F4E-359A-A311-92CF3A912CB6 (arm64) AppName.app.dSYM/Contents/Resources/DWARF/AppName</span><br></pre></td></tr></table></figure>
-<h2 id="获取Crash文件的UUID"><a href="#获取Crash文件的UUID" class="headerlink" title="获取Crash文件的UUID"></a>获取Crash文件的UUID</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;&#x27;Your AppName&#x27; arm64&quot;</span> *.crash</span><br><span class="line">grep <span class="string">&quot;demo arm&quot;</span> *.crash</span><br><span class="line"></span><br><span class="line">/<span class="regexp">/ 打印如下</span></span><br><span class="line"><span class="regexp">1227-1.crash:0x104210000 - 0x1042c7fff demo arm64  &lt;b2a23f19d6c633fe925ad5768e87bf33&gt; /var</span><span class="regexp">/containers/</span>Bundle/Application/4B304684-<span class="number">7384</span>-4FF1-9A9C-3BC220353C9D/demo.app/demo</span><br><span class="line"></span><br><span class="line">Binary Images  后面的 arm 衔接的就是 &lt;uuid&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="崩溃日志路径"><a href="#崩溃日志路径" class="headerlink" title="崩溃日志路径"></a>崩溃日志路径</h2><h3 id="手机崩溃日志路径"><a href="#手机崩溃日志路径" class="headerlink" title="手机崩溃日志路径"></a>手机崩溃日志路径</h3><blockquote>
-<p>设置 –&gt; 隐私 –&gt; 分析与改进</p>
-<p>设置 –&gt; 隐私 –&gt; 分析 –&gt; 分析数据 –&gt; 找到对应App当时的崩溃日志 –&gt; 点击右上角发送按钮</p>
-<p>手机崩溃日志路径: 设置 –&gt; 隐私 –&gt; 分析 –&gt; 分析数据 –&gt; 找到对应App当时的崩溃日志 –&gt; 点击右上角发送按钮</p>
-</blockquote>
-<h3 id="iOS模拟器Crash的路径地址"><a href="#iOS模拟器Crash的路径地址" class="headerlink" title="iOS模拟器Crash的路径地址"></a>iOS模拟器Crash的路径地址</h3><p>可以进入此目录下查看模拟器的Crash</p>
-<blockquote>
-<p>/Users/pcUserName/Library/Logs/DiagnosticReports</p>
-<p>iOS模拟器Crash的路径地址: /Users/电脑用户名/Library/Logs/DiagnosticReports</p>
-</blockquote>
-<h3 id="iOS真机Crash的路径地址–需越狱"><a href="#iOS真机Crash的路径地址–需越狱" class="headerlink" title="iOS真机Crash的路径地址–需越狱"></a>iOS真机Crash的路径地址–需越狱</h3><p>可以进入此目录下查看真机的Crash</p>
-<blockquote>
-<p>/var/mobile/Library/Logs/CrashReporter/</p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/06/02/iOSCrash%E6%9D%82%E8%AE%B0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

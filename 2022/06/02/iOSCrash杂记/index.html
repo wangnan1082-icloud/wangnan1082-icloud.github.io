@@ -22,13 +22,13 @@
 
   <meta name="description" content="Crash日志解析使用 symbolicatecrash 分析崩溃日志symbolicatecrash 是一个将堆栈地址符号化的脚本 使用Xcode自带的 symbolicatecrash 工具来将 .Crash 和 .dSYM 文件进行符号化，就可以得到详细崩溃的信息。 通过Mac自带的命令行工具解析 Crash 文件需要具备三个文件：  symbolicatecrash Xcode自带的崩溃分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOSCrash杂记">
+<meta property="og:title" content="iOS Crash杂记">
 <meta property="og:url" content="http://yoursite.com/2022/06/02/iOSCrash%E6%9D%82%E8%AE%B0/index.html">
 <meta property="og:site_name" content="王楠的Blog">
 <meta property="og:description" content="Crash日志解析使用 symbolicatecrash 分析崩溃日志symbolicatecrash 是一个将堆栈地址符号化的脚本 使用Xcode自带的 symbolicatecrash 工具来将 .Crash 和 .dSYM 文件进行符号化，就可以得到详细崩溃的信息。 通过Mac自带的命令行工具解析 Crash 文件需要具备三个文件：  symbolicatecrash Xcode自带的崩溃分">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-06-02T01:58:26.000Z">
-<meta property="article:modified_time" content="2023-06-02T02:01:31.528Z">
+<meta property="article:modified_time" content="2023-06-02T02:08:45.489Z">
 <meta property="article:author" content="王楠">
 <meta property="article:tag" content="Crash">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>iOSCrash杂记 | 王楠的Blog</title>
+  <title>iOS Crash杂记 | 王楠的Blog</title>
   
 
 
@@ -176,7 +176,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          iOSCrash杂记
+          iOS Crash杂记
         </h1>
 
         <div class="post-meta">
@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-06-02 10:01:31" itemprop="dateModified" datetime="2023-06-02T10:01:31+08:00">2023-06-02</time>
+                <time title="Modified: 2023-06-02 10:08:45" itemprop="dateModified" datetime="2023-06-02T10:08:45+08:00">2023-06-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,6 +225,7 @@
 </ol>
 <p>解析崩溃信息的时候，可以先在桌面上建立一个Crash文件夹，然后将 <code>.crash</code> 、<code>.dSYM</code> 、<code>symbolicatecrash</code> 放在这个文件夹中，这样进入这个文件夹下，直接一行命令就可以了。</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ 执行命令开始符号化crash文件</span></span><br><span class="line"><span class="regexp">./symbolicatecrash</span> XX.crash  XX.app.dSYM &gt; xx.crash</span><br><span class="line">/<span class="regexp">/ 有时候终端有可能会出现：</span></span><br><span class="line"><span class="regexp">Error: &quot;DEVELOPER_DIR&quot; is not defined at ./symbolicatecrash</span> line <span class="number">69</span>.</span><br><span class="line">/<span class="regexp">/ 需要输入下面的命令：</span></span><br><span class="line"><span class="regexp">export DEVELOPER_DIR=&quot;/</span>Applications/XCode.app/Contents/Developer<span class="string">&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 解析举例：</span></span><br><span class="line"><span class="string">./symbolicatecrash /Users/username/Desktop/Demoruntime/testSys/ios12Crash.crash /Users/username/Desktop/Demoruntime/testSys/DemoTest.app.dSYM &gt; ios12SysCrash.crash</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 <h3 id="使用-Xcode-分析崩溃日志"><a href="#使用-Xcode-分析崩溃日志" class="headerlink" title="使用 Xcode 分析崩溃日志"></a>使用 <code>Xcode</code> 分析崩溃日志</h3><p>通过 <code>Xcode</code> 打开 <code>window</code> -&gt; <code>Devices and Simulators</code> 或者直接快捷键 <code>Shift cdm 2</code> 设备管理页。点击 <code>View Device Logs</code>后，可以看到手机的崩溃日志。<code>Xcode</code> 会自动解析。 也可以把带解析的日志拖入该页，然后通过 <code>右键</code> –&gt; <code>Re-Symbolicate Log</code> 来重新解析。（所需的系统符号表文件需提前导入到 <code>/Users/userName/Library/Developer/Xcode/iOS DeviceSupport</code> 路径下）</p>
 <h2 id="UUID"><a href="#UUID" class="headerlink" title="UUID"></a>UUID</h2><h2 id="获取dSYM文件中的UUID"><a href="#获取dSYM文件中的UUID" class="headerlink" title="获取dSYM文件中的UUID"></a>获取dSYM文件中的UUID</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ 进入到dSYM文件夹中，使用如下命令</span></span><br><span class="line"><span class="regexp">dwarfdump --uuid AppName.app.dSYM</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 打印如下</span></span><br><span class="line"><span class="regexp">UUID: CBFCB3CD-8DC1-3236-A936-53C2E2BA78AC (armv7) AppName.app.dSYM/</span>Contents/Resources/DWARF/AppName</span><br><span class="line"><span class="symbol">UUID:</span> 2CA49492-1F4E-359A-A311-92CF3A912CB6 (arm64) AppName.app.dSYM/Contents/Resources/DWARF/AppName</span><br></pre></td></tr></table></figure>
 <h2 id="获取Crash文件的UUID"><a href="#获取Crash文件的UUID" class="headerlink" title="获取Crash文件的UUID"></a>获取Crash文件的UUID</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;&#x27;Your AppName&#x27; arm64&quot;</span> *.crash</span><br><span class="line">grep <span class="string">&quot;demo arm&quot;</span> *.crash</span><br><span class="line"></span><br><span class="line">/<span class="regexp">/ 打印如下</span></span><br><span class="line"><span class="regexp">1227-1.crash:0x104210000 - 0x1042c7fff demo arm64  &lt;b2a23f19d6c633fe925ad5768e87bf33&gt; /var</span><span class="regexp">/containers/</span>Bundle/Application/4B304684-<span class="number">7384</span>-4FF1-9A9C-3BC220353C9D/demo.app/demo</span><br><span class="line"></span><br><span class="line">Binary Images  后面的 arm 衔接的就是 &lt;uuid&gt;</span><br></pre></td></tr></table></figure>
