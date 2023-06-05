@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2023/06/05/WWDC2023/</loc>
+    <lastmod>2023-06-05T14:20:45.001Z</lastmod>
+    <data>
+        <display>
+        <title>WWDC2023</title>
+        <pubTime>2023-06-05T14:15:01.000Z</pubTime>
+        
+        <tag>WWDC</tag>
+         
+         
+           
+             
+              <breadCrumb title="WWDC" url="http://yoursite.com/categories/WWDC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2022/06/02/iOS%20Crash%E6%9D%82%E8%AE%B0/</loc>
     <lastmod>2023-06-02T02:08:45.489Z</lastmod>
     <data>
