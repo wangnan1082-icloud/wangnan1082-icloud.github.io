@@ -102,7 +102,7 @@
 
   
   <url>
-    <loc>http://yoursite.com/tags/Dispatch-semaphore/</loc>
+    <loc>http://yoursite.com/tags/CocoaPods/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -116,7 +116,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Reveal/</loc>
+    <loc>http://yoursite.com/tags/Dispatch-semaphore/</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/fastlane/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -130,14 +137,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/CocoaPods/</loc>
+    <loc>http://yoursite.com/tags/WWDC/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/fastlane/</loc>
+    <loc>http://yoursite.com/tags/Reveal/</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Crash/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -157,24 +171,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://yoursite.com/tags/Crash/</loc>
-    <lastmod>2023-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/WWDC/</loc>
-    <lastmod>2023-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
-    <loc>http://yoursite.com/categories/Dispatch-semaphore/</loc>
+    <loc>http://yoursite.com/categories/CocoaPods/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -188,7 +188,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/Reveal/</loc>
+    <loc>http://yoursite.com/categories/Dispatch-semaphore/</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/fastlane/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -202,14 +209,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/CocoaPods/</loc>
+    <loc>http://yoursite.com/categories/WWDC/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/fastlane/</loc>
+    <loc>http://yoursite.com/categories/Reveal/</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/Crash/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -224,20 +238,6 @@
   
   <url>
     <loc>http://yoursite.com/categories/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
-    <lastmod>2023-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/Crash/</loc>
-    <lastmod>2023-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/WWDC/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

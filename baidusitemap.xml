@@ -1,208 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
   <url>
     <loc>http://yoursite.com/2023/06/05/WWDC2023/</loc>
-    <lastmod>2023-06-06T03:16:58.317Z</lastmod>
-    <data>
-        <display>
-        <title>WWDC2023</title>
-        <pubTime>2023-06-05T14:15:01.000Z</pubTime>
-        
-        <tag>WWDC</tag>
-         
-         
-           
-             
-              <breadCrumb title="WWDC" url="http://yoursite.com/categories/WWDC/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2023-06-06</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2022/06/02/iOS%20Crash%E6%9D%82%E8%AE%B0/</loc>
-    <lastmod>2023-06-02T02:08:45.489Z</lastmod>
-    <data>
-        <display>
-        <title>iOS Crash杂记</title>
-        <pubTime>2022-06-02T01:58:26.000Z</pubTime>
-        
-        <tag>Crash</tag>
-         
-         
-           
-             
-              <breadCrumb title="Crash" url="http://yoursite.com/categories/Crash/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2023-06-02</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2018/03/09/Mach-O%E5%88%9D%E6%8E%A2/</loc>
-    <lastmod>2023-06-02T01:47:46.850Z</lastmod>
-    <data>
-        <display>
-        <title>Mach-O初探</title>
-        <pubTime>2018-03-09T02:20:49.000Z</pubTime>
-        
-        <tag>Mach-O</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mach-O" url="http://yoursite.com/categories/Mach-O/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2023-06-02</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2017/12/25/%E4%BD%BF%E7%94%A8%20OHHTTPStubs/</loc>
-    <lastmod>2023-06-02T01:45:09.425Z</lastmod>
-    <data>
-        <display>
-        <title>使用 OHHTTPStubs</title>
-        <pubTime>2017-12-25T03:05:18.000Z</pubTime>
-        
-        <tag>OHHTTPStubs</tag>
-         
-         
-           
-             
-              <breadCrumb title="OHHTTPStubs" url="http://yoursite.com/categories/OHHTTPStubs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2023-06-02</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2018/02/09/Cycript%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2023-05-30T03:44:04.428Z</lastmod>
-    <data>
-        <display>
-        <title>Cycript使用</title>
-        <pubTime>2018-02-09T05:59:13.000Z</pubTime>
-        
-        <tag>Cycript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Cycript" url="http://yoursite.com/categories/Cycript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2023-05-30</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2018/09/21/Xcode10%E4%B8%AD%E6%97%A7%E7%89%88Reveal%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2018-09-29T06:47:41.239Z</lastmod>
-    <data>
-        <display>
-        <title>Xcode10中旧版Reveal无法使用解决方法</title>
-        <pubTime>2018-09-21T09:31:28.000Z</pubTime>
-        
-        <tag>Reveal</tag>
-         
-         
-           
-             
-              <breadCrumb title="Reveal" url="http://yoursite.com/categories/Reveal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2018-09-29</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2017/03/17/CocoaPods%E5%85%AC%E5%85%B1%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/</loc>
-    <lastmod>2018-09-05T01:58:41.457Z</lastmod>
-    <data>
-        <display>
-        <title>CocoaPods公共库的创建</title>
-        <pubTime>2017-03-17T07:19:43.000Z</pubTime>
-        
-        <tag>CocoaPods</tag>
-         
-         
-           
-             
-              <breadCrumb title="CocoaPods" url="http://yoursite.com/categories/CocoaPods/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
+    <lastmod>2018-09-05</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2018/04/10/Dispatch-semaphore/</loc>
-    <lastmod>2018-06-22T01:58:18.407Z</lastmod>
-    <data>
-        <display>
-        <title>Dispatch_semaphore</title>
-        <pubTime>2018-04-10T08:27:02.000Z</pubTime>
-        
-        <tag>Dispatch_semaphore</tag>
-         
-         
-           
-             
-              <breadCrumb title="Dispatch_semaphore" url="http://yoursite.com/categories/Dispatch-semaphore/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2018-06-22</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2017/03/23/Fastlane%20%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2018-04-19T07:22:29.795Z</lastmod>
-    <data>
-        <display>
-        <title>fastlane 使用入门</title>
-        <pubTime>2017-03-23T03:05:18.000Z</pubTime>
-        
-        <tag>fastlane</tag>
-         
-         
-           
-             
-              <breadCrumb title="fastlane" url="http://yoursite.com/categories/fastlane/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2018-04-19</lastmod>
+  </url>
   <url>
     <loc>http://yoursite.com/2017/12/25/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9CiOS%E6%A8%A1%E6%8B%9F%E5%99%A8/</loc>
-    <lastmod>2018-03-16T09:11:59.077Z</lastmod>
-    <data>
-        <display>
-        <title>使用命令行操作iOS模拟器</title>
-        <pubTime>2017-12-25T09:24:48.000Z</pubTime>
-        
-        <tag>命令行</tag>
-         
-         
-           
-             
-              <breadCrumb title="命令行" url="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-</urlset>
+    <lastmod>2018-03-16</lastmod>
+  </url>
+</urlset> 
